@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>PRACOWNIA — Panel Admina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--tc:#C4713B;--bg:#1C1A17;--cr:#F5EDE3;--fb:'DM Sans',sans-serif;--fh:'Bebas Neue',Impact,sans-serif}
+    body{font-family:var(--fb);background:var(--bg);color:var(--cr);min-height:100vh}
+    .login{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+    .login-box{background:rgba(248,243,237,.04);border:1px solid rgba(248,243,237,.08);padding:40px;max-width:360px;width:100%;text-align:center}
+    .login-box h1{font-family:var(--fh);font-size:32px;letter-spacing:3px;margin-bottom:8px}
+    .login-box p{font-size:12px;color:rgba(248,243,237,.3);margin-bottom:20px}
+    .login-box input{width:100%;background:rgba(248,243,237,.06);border:1px solid rgba(248,243,237,.1);color:var(--cr);padding:12px;font-size:14px;font-family:var(--fb);margin-bottom:12px;text-align:center;letter-spacing:2px}
+    .login-box button{width:100%;background:var(--tc);color:#fff;border:none;padding:14px;font-family:var(--fh);font-size:18px;letter-spacing:2px;cursor:pointer}
+    .login-box .err{color:#f87171;font-size:11px;margin-top:8px;display:none}
+
+    .admin{display:none;max-width:1100px;margin:0 auto;padding:20px 24px 80px}
+    .admin-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid rgba(248,243,237,.08);margin-bottom:24px}
+    .admin-header h1{font-family:var(--fh);font-size:24px;letter-spacing:3px}
+    .admin-header button{background:none;border:1px solid rgba(248,243,237,.12);color:rgba(248,243,237,.4);padding:6px 16px;font-size:11px;cursor:pointer}
+
+    .tabs{display:flex;gap:2px;margin-bottom:24px}
+    .tab{padding:10px 20px;background:rgba(248,243,237,.04);border:none;color:rgba(248,243,237,.4);font-family:var(--fb);font-size:12px;font-weight:700;letter-spacing:1.5px;cursor:pointer;transition:all .2s}
+    .tab.active{background:var(--tc);color:#fff}
+
+    .month-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .month-nav button{background:none;border:1px solid rgba(248,243,237,.12);color:rgba(248,243,237,.4);padding:4px 14px;font-size:18px;cursor:pointer}
+    .month-nav .title{font-family:var(--fh);font-size:24px;letter-spacing:3px}
+
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}
+    .cal-head{text-align:center;font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(248,243,237,.2);padding:8px 0}
+    .cal-day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1px solid rgba(248,243,237,.06);cursor:pointer;transition:all .2s;position:relative}
+    .cal-day:hover{border-color:var(--tc)}
+    .cal-day.past{opacity:.3;cursor:default}
+    .cal-day .num{font-family:var(--fh);font-size:20px}
+    .cal-day .slots{font-size:7px;font-weight:700;display:flex;gap:2px}
+    .cal-day .slots span{width:6px;height:6px;border-radius:1px}
+
+    .day-editor{background:rgba(248,243,237,.04);border:1px solid rgba(248,243,237,.08);padding:24px;margin-top:16px;display:none}
+    .day-editor h3{font-family:var(--fh);font-size:22px;letter-spacing:2px;margin-bottom:4px;color:var(--tc)}
+    .day-editor .subtitle{font-size:11px;color:rgba(248,243,237,.3);margin-bottom:16px}
+
+    .slot-toggle{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border:1px solid rgba(248,243,237,.08);margin-bottom:4px;cursor:pointer;transition:all .2s}
+    .slot-toggle:hover{border-color:rgba(248,243,237,.2)}
+    .slot-toggle.booked{background:rgba(248,113,113,.08);border-color:rgba(248,113,113,.25)}
+    .slot-toggle.free{background:rgba(74,222,128,.06);border-color:rgba(74,222,128,.2)}
+    .slot-toggle .label{font-weight:700;font-size:13px}
+    .slot-toggle .status{font-size:11px;font-weight:700;letter-spacing:1.5px}
+    .slot-toggle.booked .status{color:#f87171}
+    .slot-toggle.free .status{color:#4ade80}
+
+    .export-box{background:rgba(248,243,237,.04);border:1px solid rgba(248,243,237,.08);padding:16px;margin-top:24px}
+    .export-box textarea{width:100%;background:rgba(248,243,237,.06);border:1px solid rgba(248,243,237,.1);color:var(--cr);font-family:monospace;font-size:11px;padding:12px;min-height:150px;resize:vertical}
+    .export-box p{font-size:11px;color:rgba(248,243,237,.3);margin-bottom:8px;line-height:1.6}
+    .btn-sm{background:var(--tc);color:#fff;border:none;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:1px;cursor:pointer;margin-top:8px;margin-right:4px}
+
+    .inq-list{display:grid;gap:8px}
+    .inq-card{background:rgba(248,243,237,.04);border:1px solid rgba(248,243,237,.08);padding:16px}
+    .inq-card .date{font-size:10px;color:rgba(248,243,237,.25);letter-spacing:1.5px;font-weight:700}
+    .inq-card .detail{font-size:13px;margin-top:4px}
+    .inq-card .detail strong{color:var(--tc)}
+
+    @media(max-width:600px){
+      .cal-grid{gap:1px}
+      .cal-day .num{font-size:16px}
+      .slot-toggle{padding:10px 12px}
+    }
+  </style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login" id="loginScreen">
+  <div class="login-box">
+    <h1>🔒 ADMIN</h1>
+    <p>Panel zarządzania rezerwacjami PRACOWNIA</p>
+    <input type="password" id="passInput" placeholder="Hasło" onkeydown="if(event.key==='Enter')tryLogin()">
+    <button onclick="tryLogin()">ZALOGUJ</button>
+    <div class="err" id="loginErr">Nieprawidłowe hasło</div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin" id="adminPanel">
+  <div class="admin-header">
+    <div>
+      <h1>PRACOWNIA <span style="color:var(--tc)">ADMIN</span></h1>
+      <div style="font-size:10px;color:rgba(248,243,237,.25)">Panel zarządzania kalendarzem i rezerwacjami</div>
+    </div>
+    <button onclick="logout()">WYLOGUJ</button>
+  </div>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('calendar')">📅 KALENDARZ</button>
+    <button class="tab" onclick="showTab('export')">📋 EKSPORT / IMPORT</button>
+    <button class="tab" onclick="showTab('help')">❓ INSTRUKCJA</button>
+  </div>
+
+  <!-- CALENDAR TAB -->
+  <div id="tab-calendar">
+    <div class="month-nav">
+      <button onclick="adminNav(-1)">‹</button>
+      <div class="title" id="adminMonthTitle"></div>
+      <button onclick="adminNav(1)">›</button>
+    </div>
+    <div class="cal-grid" id="adminCalGrid"></div>
+
+    <div class="day-editor" id="dayEditor">
+      <h3 id="editorTitle"></h3>
+      <div class="subtitle" id="editorSubtitle"></div>
+      <div id="editorSlots"></div>
+      <div style="margin-top:12px;font-size:10px;color:rgba(248,243,237,.2)">Kliknij slot żeby zmienić status. Zmiany zapisują się automatycznie.</div>
+    </div>
+  </div>
+
+  <!-- EXPORT TAB -->
+  <div id="tab-export" style="display:none">
+    <h2 style="font-family:var(--fh);font-size:22px;letter-spacing:2px;margin-bottom:8px">EKSPORT / IMPORT DANYCH</h2>
+    <p style="font-size:12px;color:rgba(248,243,237,.3);margin-bottom:16px;line-height:1.7">
+      Poniżej znajdziesz dane kalendarza w formacie JSON. Możesz je skopiować i wkleić do pliku <code style="background:rgba(248,243,237,.08);padding:2px 6px">index.html</code> na stronie — w zmiennej <code style="background:rgba(248,243,237,.08);padding:2px 6px">booked</code> w sekcji JavaScript.
+    </p>
+    <div class="export-box">
+      <p><strong>Twoje dane kalendarza (JSON):</strong></p>
+      <textarea id="exportData" readonly></textarea>
+      <button class="btn-sm" onclick="copyExport()">KOPIUJ</button>
+      <button class="btn-sm" onclick="downloadExport()" style="background:rgba(248,243,237,.1);color:var(--cr)">POBIERZ .JSON</button>
+    </div>
+    <div class="export-box" style="margin-top:12px">
+      <p><strong>Import danych:</strong> Wklej JSON poniżej i kliknij "Importuj"</p>
+      <textarea id="importData" placeholder='{"2026-03-15":["morning"],"2026-04-01":["fullday","night"]}'></textarea>
+      <button class="btn-sm" onclick="importData()">IMPORTUJ</button>
+    </div>
+  </div>
+
+  <!-- HELP TAB -->
+  <div id="tab-help" style="display:none">
+    <h2 style="font-family:var(--fh);font-size:22px;letter-spacing:2px;margin-bottom:16px">JAK ZARZĄDZAĆ REZERWACJAMI</h2>
+    <div style="font-size:13px;color:rgba(248,243,237,.5);line-height:2">
+      <p><strong style="color:var(--tc)">1. Klient wysyła zapytanie</strong><br>
+      Dostajesz email z danymi klienta, wybraną datą i slotem.</p>
+
+      <p style="margin-top:12px"><strong style="color:var(--tc)">2. Potwierdzasz i wystawiasz FV</strong><br>
+      Odpowiadasz klientowi mailem/telefonem. Wystawiasz fakturę (np. przez fakturownia.pl lub ręcznie).</p>
+
+      <p style="margin-top:12px"><strong style="color:var(--tc)">3. Klient płaci przelewem</strong><br>
+      Po wpłacie na konto — rezerwacja potwierdzona.</p>
+
+      <p style="margin-top:12px"><strong style="color:var(--tc)">4. Blokujesz termin w panelu</strong><br>
+      Wchodzisz tutaj → klikasz dzień → klikasz slot → zmienia się na "ZAJĘTY".</p>
+
+      <p style="margin-top:12px"><strong style="color:var(--tc)">5. Aktualizujesz stronę</strong><br>
+      Zakładka "Eksport" → kopiujesz JSON → wklejasz do pliku index.html na GitHubie (w zmiennej <code>booked</code>). Vercel automatycznie aktualizuje stronę w ciągu minuty.</p>
+
+      <p style="margin-top:12px"><strong style="color:var(--tc)">6. Wysyłasz klientowi</strong><br>
+      Email z: kodem do zamka, adresem, instrukcją sprzętu, hasłem WiFi.</p>
+
+      <p style="margin-top:20px;border-top:1px solid rgba(248,243,237,.08);padding-top:16px">
+        <strong style="color:#4ade80">💡 Wskazówka:</strong> Na start możesz zarządzać wszystkim z tego panelu + email/telefon. Gdy skala urośnie — dodamy automatyczne płatności i emaile.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ── CONFIG ──
+  var ADMIN_PASS = 'pracownia2026'; // ZMIEŃ TO HASŁO!
+  var MO=['Styczeń','Luty','Marzec','Kwiecień','Maj','Czerwiec','Lipiec','Sierpień','Wrzesień','Październik','Listopad','Grudzień'];
+  var DW=['Pn','Wt','Śr','Cz','Pt','Sb','Nd'];
+  var DN=['Niedziela','Poniedziałek','Wtorek','Środa','Czwartek','Piątek','Sobota'];
+
+  function dk(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+  function fd(d){return d.getDate()+' '+MO[d.getMonth()]+' '+d.getFullYear()}
+  function prices(d){var w=d.getDay(),ps=w===5||w===6;return{morning:ps?599:420,afternoon:ps?720:540,fullday:w===6?1200:w===5?999:750,night:Math.round((ps?599:420)*0.7)}}
+
+  // Load from localStorage or start empty
+  var booked = JSON.parse(localStorage.getItem('pracownia_booked') || '{}');
+  function save(){localStorage.setItem('pracownia_booked',JSON.stringify(booked));updateExport()}
+
+  var curMonth = new Date();
+  var today = new Date(); today.setHours(0,0,0,0);
+  var selDay = null;
+
+  // ── LOGIN ──
+  window.tryLogin = function(){
+    var p = document.getElementById('passInput').value;
+    if(p === ADMIN_PASS){
+      document.getElementById('loginScreen').style.display='none';
+      document.getElementById('adminPanel').style.display='block';
+      sessionStorage.setItem('admin_logged','1');
+      renderAdmin();
+    } else {
+      document.getElementById('loginErr').style.display='block';
+    }
+  };
+  window.logout = function(){
+    sessionStorage.removeItem('admin_logged');
+    document.getElementById('adminPanel').style.display='none';
+    document.getElementById('loginScreen').style.display='flex';
+    document.getElementById('passInput').value='';
+    document.getElementById('loginErr').style.display='none';
+  };
+
+  // Auto-login if session
+  if(sessionStorage.getItem('admin_logged')==='1'){
+    document.getElementById('loginScreen').style.display='none';
+    document.getElementById('adminPanel').style.display='block';
+    setTimeout(renderAdmin, 50);
+  }
+
+  // ── TABS ──
+  window.showTab = function(id){
+    ['calendar','export','help'].forEach(function(t){
+      document.getElementById('tab-'+t).style.display = t===id?'block':'none';
+    });
+    document.querySelectorAll('.tab').forEach(function(el){el.classList.remove('active')});
+    event.target.classList.add('active');
+    if(id==='export') updateExport();
+  };
+
+  // ── CALENDAR ──
+  window.adminNav = function(dir){
+    curMonth = new Date(curMonth); curMonth.setMonth(curMonth.getMonth()+dir); renderAdmin();
+  };
+
+  function renderAdmin(){
+    var y=curMonth.getFullYear(),m=curMonth.getMonth();
+    document.getElementById('adminMonthTitle').textContent=MO[m]+' '+y;
+    var f=new Date(y,m,1),sd=f.getDay();if(sd===0)sd=7;
+    var dim=new Date(y,m+1,0).getDate();
+    var h='';
+    DW.forEach(function(d){h+='<div class="cal-head">'+d+'</div>'});
+    for(var e=1;e<sd;e++) h+='<div></div>';
+    for(var d=1;d<=dim;d++){
+      var dt=new Date(y,m,d),past=dt<today,key=dk(dt);
+      var b=booked[key]||[];
+      var hasMorning=b.indexOf('morning')>=0||b.indexOf('fullday')>=0;
+      var hasAfternoon=b.indexOf('afternoon')>=0||b.indexOf('fullday')>=0;
+      var hasNight=b.indexOf('night')>=0;
+      var allFull=hasMorning&&hasAfternoon&&hasNight;
+
+      var bg = allFull?'rgba(248,113,113,.06)':b.length>0?'rgba(251,191,36,.06)':'rgba(74,222,128,.04)';
+
+      h+='<div class="cal-day'+(past?' past':'')+'" style="background:'+bg+'" '+(past?'':'onclick="adminPickDay(\''+key+'\')"')+'>';
+      h+='<div class="num">'+d+'</div>';
+      h+='<div class="slots">';
+      h+='<span style="background:'+(hasMorning?'#f87171':'#4ade80')+'" title="Rano"></span>';
+      h+='<span style="background:'+(hasAfternoon?'#f87171':'#4ade80')+'" title="Popoł."></span>';
+      h+='<span style="background:'+(hasNight?'#f87171':'#4ade80')+'" title="Noc"></span>';
+      h+='</div></div>';
+    }
+    document.getElementById('adminCalGrid').innerHTML=h;
+  }
+
+  window.adminPickDay = function(key){
+    selDay = key;
+    var d = new Date(key+'T12:00:00');
+    var pr = prices(d);
+    document.getElementById('editorTitle').textContent = DN[d.getDay()]+', '+fd(d);
+    document.getElementById('editorSubtitle').textContent = 'Kliknij slot żeby przełączyć wolny/zajęty';
+
+    var b = booked[key] || [];
+    var slots = [
+      {id:'morning',  l:'☀️ RANO',       t:'08:00–13:00 (5h)', p:pr.morning},
+      {id:'afternoon',l:'🌤 POPOŁUDNIE',  t:'13:00–18:00 (5h)', p:pr.afternoon},
+      {id:'fullday',  l:'📅 CAŁY DZIEŃ',  t:'08:00–18:00 (10h)',p:pr.fullday},
+      {id:'night',    l:'🌙 NOC −30%',    t:'22:00–02:00 (5h)', p:pr.night},
+    ];
+
+    var h = '';
+    slots.forEach(function(s){
+      var isBooked = b.indexOf(s.id)>=0 || (s.id==='morning'&&b.indexOf('fullday')>=0) || (s.id==='afternoon'&&b.indexOf('fullday')>=0);
+      if(s.id==='fullday') isBooked = b.indexOf('fullday')>=0;
+      h+='<div class="slot-toggle '+(isBooked?'booked':'free')+'" onclick="toggleSlot(\''+key+'\',\''+s.id+'\')">';
+      h+='<div><div class="label">'+s.l+'</div><div style="font-size:11px;color:rgba(248,243,237,.35)">'+s.t+' · '+s.p+' zł netto</div></div>';
+      h+='<div class="status">'+(isBooked?'● ZAJĘTY':'○ WOLNY')+'</div>';
+      h+='</div>';
+    });
+
+    document.getElementById('editorSlots').innerHTML = h;
+    document.getElementById('dayEditor').style.display = 'block';
+  };
+
+  window.toggleSlot = function(key, slotId){
+    if(!booked[key]) booked[key] = [];
+    var b = booked[key];
+    var idx = b.indexOf(slotId);
+
+    if(slotId === 'fullday'){
+      if(idx>=0){
+        // Unbook fullday — also remove morning/afternoon that were auto-blocked
+        booked[key] = b.filter(function(s){return s!=='fullday'&&s!=='morning'&&s!=='afternoon'});
+      } else {
+        // Book fullday — also block morning+afternoon
+        if(b.indexOf('morning')<0) b.push('morning');
+        if(b.indexOf('afternoon')<0) b.push('afternoon');
+        b.push('fullday');
+      }
+    } else if(slotId === 'morning' || slotId === 'afternoon'){
+      if(idx>=0){
+        booked[key] = b.filter(function(s){return s!==slotId&&s!=='fullday'});
+      } else {
+        b.push(slotId);
+      }
+    } else {
+      // night
+      if(idx>=0){ booked[key] = b.filter(function(s){return s!==slotId}); }
+      else { b.push(slotId); }
+    }
+
+    // Clean empty days
+    if(booked[key].length === 0) delete booked[key];
+
+    save();
+    renderAdmin();
+    adminPickDay(key);
+  };
+
+  // ── EXPORT ──
+  function updateExport(){
+    var sorted = {};
+    Object.keys(booked).sort().forEach(function(k){sorted[k]=booked[k]});
+    document.getElementById('exportData').value = JSON.stringify(sorted, null, 2);
+  }
+
+  window.copyExport = function(){
+    var el = document.getElementById('exportData');
+    el.select(); document.execCommand('copy');
+    alert('Skopiowano do schowka!');
+  };
+
+  window.downloadExport = function(){
+    var data = document.getElementById('exportData').value;
+    var blob = new Blob([data], {type:'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'pracownia-bookings.json';
+    a.click();
+  };
+
+  window.importData = function(){
+    var raw = document.getElementById('importData').value;
+    try {
+      var data = JSON.parse(raw);
+      booked = data;
+      save();
+      renderAdmin();
+      if(selDay) adminPickDay(selDay);
+      alert('Zaimportowano pomyślnie!');
+    } catch(e){
+      alert('Błąd: nieprawidłowy JSON. Sprawdź format danych.');
+    }
+  };
+})();
+</script>
+</body>
+</html>
