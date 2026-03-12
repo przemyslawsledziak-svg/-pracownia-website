@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <rect width="80" height="80" fill="#1C1A17" rx="12"/>
+  <rect x="16" y="14" width="5" height="52" rx="2.5" fill="#C4713B"/>
+  <text x="30" y="58" font-family="'Bebas Neue', 'Impact', 'Arial Black', sans-serif" font-size="56" font-weight="700" fill="#F5EDE3" letter-spacing="2">P</text>
+  <circle cx="66" cy="20" r="5" fill="#E04040"/>
+</svg>
