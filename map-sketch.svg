@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <filter id="paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise"/>
+      <feDiffuseLighting in="noise" lighting-color="#F5EDE3" surfaceScale="2" result="diffLight">
+        <feDistantLight azimuth="45" elevation="55"/>
+      </feDiffuseLighting>
+      <feComposite in="SourceGraphic" in2="diffLight" operator="arithmetic" k1="1" k2="0" k3="0" k4="0"/>
+    </filter>
+    <filter id="sketch">
+      <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2" result="turbulence"/>
+      <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
+
+  <!-- Paper background -->
+  <rect width="800" height="500" fill="#1C1A17"/>
+  <rect width="800" height="500" fill="#F5EDE3" opacity="0.06"/>
+
+  <!-- Grid subtle -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(196,113,59,0.06)" stroke-width="0.5"/>
+  </pattern>
+  <rect width="800" height="500" fill="url(#grid)"/>
+
+  <!-- ═══ STREETS ═══ -->
+  <g stroke="rgba(245,237,227,0.15)" stroke-width="1" fill="none" stroke-linecap="round">
+
+    <!-- Mehoffera (main, horizontal) -->
+    <path d="M 0,220 Q 200,218 400,215 Q 550,212 800,210" stroke="rgba(245,237,227,0.25)" stroke-width="28" opacity="0.3"/>
+    <path d="M 0,220 Q 200,218 400,215 Q 550,212 800,210" stroke="rgba(196,113,59,0.2)" stroke-width="2" stroke-dasharray="8,4"/>
+
+    <!-- Światowida (lower horizontal) -->
+    <path d="M 0,410 Q 200,412 400,415 Q 600,418 800,420" stroke="rgba(245,237,227,0.15)" stroke-width="22" opacity="0.3"/>
+    <path d="M 0,410 Q 200,412 400,415 Q 600,418 800,420" stroke="rgba(245,237,227,0.12)" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+    <!-- Erazma z Zakroczymia (diagonal, top-left to center) -->
+    <path d="M 280,0 Q 310,100 350,200 Q 380,280 420,420" stroke="rgba(245,237,227,0.15)" stroke-width="18" opacity="0.3"/>
+    <path d="M 280,0 Q 310,100 350,200 Q 380,280 420,420" stroke="rgba(245,237,227,0.12)" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+    <!-- Myśliborska (upper, slightly diagonal) -->
+    <path d="M 500,0 Q 520,50 550,100 Q 600,180 650,210" stroke="rgba(245,237,227,0.12)" stroke-width="14" opacity="0.3"/>
+    <path d="M 500,0 Q 520,50 550,100 Q 600,180 650,210" stroke="rgba(245,237,227,0.1)" stroke-width="1" stroke-dasharray="5,4"/>
+
+    <!-- Vertical connector (Paca) -->
+    <path d="M 650,210 L 660,420" stroke="rgba(245,237,227,0.1)" stroke-width="12" opacity="0.3"/>
+    <path d="M 650,210 L 660,420" stroke="rgba(245,237,227,0.08)" stroke-width="1" stroke-dasharray="5,4"/>
+
+    <!-- Small streets -->
+    <path d="M 150,210 L 160,410" stroke="rgba(245,237,227,0.08)" stroke-width="8" opacity="0.3"/>
+    <path d="M 500,210 L 510,415" stroke="rgba(245,237,227,0.08)" stroke-width="8" opacity="0.3"/>
+  </g>
+
+  <!-- ═══ BUILDING BLOCKS (sketched rectangles) ═══ -->
+  <g fill="rgba(245,237,227,0.04)" stroke="rgba(245,237,227,0.08)" stroke-width="0.8">
+    <!-- Block above Mehoffera left -->
+    <rect x="50" y="100" width="110" height="90" rx="2" transform="rotate(-1,105,145)"/>
+    <rect x="180" y="80" width="80" height="110" rx="2" transform="rotate(1,220,135)"/>
+
+    <!-- Block below Mehoffera (our block) -->
+    <rect x="200" y="250" width="120" height="100" rx="2" transform="rotate(-0.5,260,300)"/>
+    <rect x="160" y="260" width="30" height="80" rx="2"/>
+
+    <!-- Block right of diagonal -->
+    <rect x="420" y="50" width="60" height="140" rx="2" transform="rotate(0.5,450,120)"/>
+    <rect x="560" y="60" width="100" height="120" rx="2"/>
+
+    <!-- Blocks below -->
+    <rect x="440" y="250" width="80" height="130" rx="2"/>
+    <rect x="540" y="260" width="90" height="120" rx="2" transform="rotate(-0.5,585,320)"/>
+
+    <!-- Białołęcki Ośrodek Sportu -->
+    <rect x="530" y="270" width="85" height="85" rx="2" fill="rgba(74,222,128,0.06)" stroke="rgba(74,222,128,0.15)"/>
+  </g>
+
+  <!-- ═══ STREET LABELS ═══ -->
+  <g font-family="'DM Sans', sans-serif" fill="rgba(245,237,227,0.3)" font-size="10" font-weight="500" letter-spacing="2">
+    <text x="60" y="207" transform="rotate(-0.5,60,207)">MEHOFFERA</text>
+    <text x="100" y="403" transform="rotate(0.5,100,403)">ŚWIATOWIDA</text>
+    <text x="285" y="120" transform="rotate(58,285,120)" font-size="9">ERAZMA Z ZAKROCZYMIA</text>
+    <text x="510" y="70" transform="rotate(62,510,70)" font-size="8">MYŚLIBORSKA</text>
+    <text x="665" y="320" transform="rotate(88,665,320)" font-size="8">PACA</text>
+  </g>
+
+  <!-- ═══ LANDMARKS ═══ -->
+  <g font-family="'DM Sans', sans-serif" font-size="8" fill="rgba(245,237,227,0.2)" letter-spacing="1">
+    <text x="545" y="318" fill="rgba(74,222,128,0.3)" font-size="7" font-weight="600">BIAŁOŁĘCKI</text>
+    <text x="545" y="328" fill="rgba(74,222,128,0.3)" font-size="7" font-weight="600">OŚRODEK SPORTU</text>
+    <!-- Sport field lines -->
+    <rect x="555" y="285" width="40" height="25" rx="1" fill="none" stroke="rgba(74,222,128,0.12)" stroke-width="0.5"/>
+
+    <text x="30" y="155" fill="rgba(245,237,227,0.15)" font-size="7">NETTO</text>
+    <circle cx="20" cy="152" r="3" fill="rgba(245,237,227,0.1)"/>
+  </g>
+
+  <!-- ═══ PIN — PRACOWNIA ═══ -->
+  <g transform="translate(320,240)">
+    <!-- Glow -->
+    <ellipse cx="0" cy="55" rx="25" ry="6" fill="rgba(196,113,59,0.25)" filter="url(#sketch)"/>
+    <ellipse cx="0" cy="55" rx="15" ry="4" fill="rgba(196,113,59,0.4)"/>
+
+    <!-- Pin body -->
+    <path d="M 0,48 L -4,20 Q -4,0 0,-20 Q 4,0 4,20 Z" fill="#C4713B" opacity="0.9"/>
+
+    <!-- Pin head -->
+    <circle cx="0" cy="-30" r="22" fill="#1C1A17" stroke="#C4713B" stroke-width="2.5"/>
+
+    <!-- P letter in pin -->
+    <rect x="-11" y="-42" width="3.5" height="26" rx="1.5" fill="#C4713B"/>
+    <text x="-3" y="-19" font-family="'Bebas Neue', Impact, sans-serif" font-size="28" font-weight="700" fill="#F5EDE3" letter-spacing="1">P</text>
+    <circle cx="12" cy="-42" r="2.5" fill="#E04040"/>
+
+    <!-- Label below pin -->
+    <rect x="-55" y="62" width="110" height="22" rx="3" fill="rgba(28,26,23,0.85)" stroke="rgba(196,113,59,0.4)" stroke-width="1"/>
+    <text x="0" y="77" font-family="'Bebas Neue', Impact, sans-serif" font-size="11" fill="#F5EDE3" letter-spacing="3" text-anchor="middle">PRACOWNIA</text>
+  </g>
+
+  <!-- Address annotation -->
+  <g transform="translate(320,360)">
+    <line x1="-30" y1="-5" x2="-30" y2="25" stroke="rgba(196,113,59,0.3)" stroke-width="1" stroke-dasharray="3,2"/>
+    <circle cx="-30" cy="-5" r="2" fill="#C4713B"/>
+    <text x="-20" y="8" font-family="'DM Sans', sans-serif" font-size="11" fill="rgba(245,237,227,0.5)" font-weight="600">Mehoffera 26 / lok. 19</text>
+    <text x="-20" y="22" font-family="'DM Sans', sans-serif" font-size="9" fill="rgba(245,237,227,0.25)">03-131 Warszawa · Tarchomin</text>
+  </g>
+
+  <!-- Compass -->
+  <g transform="translate(740,60)">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="rgba(245,237,227,0.1)" stroke-width="0.5"/>
+    <line x1="0" y1="-14" x2="0" y2="14" stroke="rgba(245,237,227,0.1)" stroke-width="0.5"/>
+    <line x1="-14" y1="0" x2="14" y2="0" stroke="rgba(245,237,227,0.1)" stroke-width="0.5"/>
+    <text x="0" y="-20" font-family="'DM Sans', sans-serif" font-size="8" fill="rgba(196,113,59,0.4)" text-anchor="middle" font-weight="700">N</text>
+    <polygon points="0,-12 -3,-4 3,-4" fill="rgba(196,113,59,0.3)"/>
+  </g>
+
+  <!-- Scale bar -->
+  <g transform="translate(40,470)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="rgba(245,237,227,0.15)" stroke-width="1"/>
+    <line x1="0" y1="-3" x2="0" y2="3" stroke="rgba(245,237,227,0.15)" stroke-width="1"/>
+    <line x1="80" y1="-3" x2="80" y2="3" stroke="rgba(245,237,227,0.15)" stroke-width="1"/>
+    <text x="40" y="-6" font-family="'DM Sans', sans-serif" font-size="7" fill="rgba(245,237,227,0.12)" text-anchor="middle">~200m</text>
+  </g>
+</svg>
