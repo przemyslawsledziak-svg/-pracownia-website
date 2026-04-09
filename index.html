@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRACOWNIA — przestrzeń na wynajem | Studio. Szkolenia. Spotkania.</title>
+  <meta name="description" content="Nowoczesna przestrzeń na wynajem w Warszawie, ul. Mehoffera 26. Rzutnik, muzyka, smart lighting, kawa i woda w cenie. Codziennie 08:00–24:00.">
+  <meta name="keywords" content="przestrzeń na wynajem Warszawa, sala szkoleniowa Warszawa, studio nagrań Warszawa, wynajem sali Tarchomin, Mehoffera 26, coworking Warszawa, sala konferencyjna">
+  <meta name="author" content="Kulinarisk Solutions Sp. z o.o.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pracownia.studio/">
+  <meta name="theme-color" content="#1C1A17">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PRACOWNIA — przestrzeń na wynajem | Warszawa">
+  <meta property="og:description" content="30m² industrialnego klimatu na Mehoffera 26. Rzutnik, muzyka, smart lighting, kawa w cenie. Codziennie 08:00–24:00.">
+  <meta property="og:url" content="https://pracownia.studio/">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:site_name" content="PRACOWNIA">
+  <meta property="og:image" content="https://pracownia.studio/pracownia-01.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1600">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PRACOWNIA — przestrzeń na wynajem | Warszawa">
+  <meta name="twitter:image" content="https://pracownia.studio/pracownia-01.jpg">
+  <meta name="twitter:description" content="30m² industrialnego klimatu. Rzutnik, muzyka, smart lighting, kawa w cenie. Codziennie 08:00–24:00.">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "PRACOWNIA",
+    "description": "Nowoczesna przestrzeń na wynajem w Warszawie — studio, szkolenia, spotkania.",
+    "url": "https://pracownia.studio",
+    "telephone": "+48512760769",
+    "email": "kontakt@pracownia.studio",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Mehoffera 26/lok. 19",
+      "postalCode": "03-131",
+      "addressLocality": "Warszawa",
+      "addressCountry": "PL"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "52.322498",
+      "longitude": "20.945317"
+    },
+    "openingHours": "Mo-Su 08:00-24:00",
+    "priceRange": "$$"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital@1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --tc:#C4713B;--ch:#2C2C2C;--rr:#E04040;
+      --cr:#F5EDE3;--db:#1C1A17;--lb:#FAF7F3;--fg:#F2EFEA;--sd:#D4C4A8;
+      --fh:'Bebas Neue','Impact',sans-serif;
+      --fa:'Libre Baskerville','Georgia',serif;
+      --fb:'DM Sans','Helvetica Neue',Arial,sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--fb);background:var(--lb);color:var(--ch);overflow-x:hidden}
+    @keyframes recPulse{0%,100%{opacity:1}50%{opacity:.3}}
+    .rec-dot{width:9px;height:9px;border-radius:50%;background:var(--rr);display:inline-block;animation:recPulse 2s ease-in-out infinite;flex-shrink:0}
+
+    /* ── NAV ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:56px;background:rgba(28,26,23,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,113,59,.15)}
+    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-word{font-family:var(--fh);font-size:17px;letter-spacing:3px;color:var(--cr)}
+    .nav-links{display:flex;align-items:center;gap:18px;list-style:none}
+    .nav-links a{font-size:12px;font-weight:500;color:rgba(248,243,237,.55);text-decoration:none;transition:color .2s;letter-spacing:.5px}
+    .nav-links a:hover{color:var(--tc)}
+    .nav-cta{background:var(--tc)!important;color:#fff!important;padding:7px 16px;font-weight:600!important;border-radius:3px}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--cr);border-radius:2px}
+
+    /* ── SHARED ── */
+    .sec{padding:64px 24px}
+    .sec-inner{max-width:1100px;margin:0 auto}
+    .label{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .label-line{width:24px;height:3px;background:var(--tc)}
+    .label-text{font-size:9px;font-weight:600;letter-spacing:3px;color:var(--tc);text-transform:uppercase}
+    .title{font-family:var(--fh);font-size:clamp(32px,6vw,56px);letter-spacing:3px;color:var(--ch);line-height:.95;margin-bottom:12px}
+    .title-light{color:var(--cr)}
+    .sub{font-family:var(--fa);font-style:italic;font-size:14px;color:rgba(44,44,44,.5);line-height:1.7;max-width:440px}
+    .btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--tc);color:#fff;font-family:var(--fb);font-size:13px;font-weight:600;padding:12px 24px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;transition:background .2s}
+    .btn-p:hover{background:#d4834e}
+    .btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(248,243,237,.7);font-family:var(--fb);font-size:13px;font-weight:500;padding:12px 20px;border-radius:3px;border:1px solid rgba(248,243,237,.2);text-decoration:none;cursor:pointer}
+    .btn-g:hover{border-color:var(--tc);color:#fff}
+
+    /* ── HERO ── */
+    #hero{min-height:100svh;position:relative;display:flex;align-items:center;background:var(--db)}
+    .h-bg{position:absolute;inset:0;background:url('hero.jpg') center/cover;filter:brightness(.55) saturate(.95) contrast(1.05)}
+    .h-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,15,.35) 0%,rgba(20,18,15,.15) 40%,rgba(20,18,15,.7) 100%)}
+    .h-ov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(28,26,23,.2),rgba(28,26,23,.7))}
+    .h-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:100px 24px 80px}
+    .h-eye{font-size:10px;font-weight:600;letter-spacing:3px;color:var(--tc);text-transform:uppercase;margin-bottom:18px}
+    .h-hl{font-family:var(--fh);font-size:clamp(48px,12vw,100px);line-height:.9;letter-spacing:3px;color:var(--cr);margin-bottom:18px}
+    .h-hl em{color:var(--tc);font-style:normal}
+    .h-sub{font-family:var(--fa);font-style:italic;font-size:clamp(13px,2vw,17px);color:rgba(248,243,237,.5);margin-bottom:28px;line-height:1.65;max-width:440px}
+    .h-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px}
+    .h-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(248,243,237,.07);border:1px solid rgba(196,113,59,.3);padding:4px 10px;font-size:10px;font-weight:600;color:rgba(248,243,237,.7);letter-spacing:.3px}
+    .h-btns{display:flex;gap:10px;flex-wrap:wrap}
+    .h-stats{position:absolute;bottom:0;left:0;right:0;z-index:3;display:flex;background:rgba(28,26,23,.6);backdrop-filter:blur(6px)}
+    .h-stat{flex:1;padding:12px 16px;border-right:1px solid rgba(248,243,237,.06)}
+    .h-stat:last-child{border-right:none}
+    .h-stat-n{font-family:var(--fh);font-size:20px;color:var(--tc);line-height:1}
+    .h-stat-l{font-size:8px;letter-spacing:1.5px;color:rgba(248,243,237,.3);text-transform:uppercase;margin-top:2px}
+
+    /* ── USŁUGI (compact) ── */
+    #uslugi{background:var(--lb)}
+    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:32px}
+    .svc{padding:28px 22px;position:relative;transition:transform .25s;overflow:hidden;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end}
+    .svc:hover{transform:translateY(-4px)}
+    .svc::before{content:'';position:absolute;inset:0;z-index:0;background-size:cover;background-position:center}
+    .svc::after{content:'';position:absolute;inset:0;z-index:1}
+    .svc>*{position:relative;z-index:2}
+    .svc-ico{margin-bottom:12px}
+    .svc-num{font-family:var(--fh);font-size:48px;line-height:1;margin-bottom:6px}
+    .svc-tag{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;display:block}
+    .svc-name{font-family:var(--fh);font-size:28px;letter-spacing:2px;line-height:1;margin-bottom:8px}
+    .svc-desc{font-size:13px;line-height:1.65}
+    /* Studio */
+    .svc-studio::before{background-image:url('studio.jpg')}
+    .svc-studio::after{background:linear-gradient(to top,rgba(28,26,23,.88) 40%,rgba(28,26,23,.3) 100%)}
+    .svc-studio .svc-ico{color:var(--tc)}
+    .svc-studio .svc-num{color:rgba(196,113,59,.25)}
+    .svc-studio .svc-tag{color:var(--tc)}
+    .svc-studio .svc-name{color:#F5EDE3}
+    .svc-studio .svc-desc{color:rgba(245,237,227,.55)}
+    /* Szkolenia */
+    .svc-szkolenia::before{background-image:url('szkolenia.jpg')}
+    .svc-szkolenia::after{background:linear-gradient(to top,rgba(42,58,82,.92) 40%,rgba(42,58,82,.3) 100%)}
+    .svc-szkolenia .svc-ico{color:var(--tc)}
+    .svc-szkolenia .svc-num{color:rgba(196,113,59,.2)}
+    .svc-szkolenia .svc-tag{color:var(--tc)}
+    .svc-szkolenia .svc-name{color:#F5EDE3}
+    .svc-szkolenia .svc-desc{color:rgba(245,237,227,.55)}
+    /* Spotkania */
+    .svc-spotkania::before{background-image:url('party.jpg')}
+    .svc-spotkania::after{background:linear-gradient(to top,rgba(61,42,26,.92) 40%,rgba(61,42,26,.3) 100%)}
+    .svc-spotkania .svc-ico{color:var(--tc)}
+    .svc-spotkania .svc-num{color:rgba(196,113,59,.3)}
+    .svc-spotkania .svc-tag{color:rgba(245,237,227,.6)}
+    .svc-spotkania .svc-name{color:var(--tc)}
+    .svc-spotkania .svc-desc{color:rgba(245,237,227,.5)}
+
+    /* ── GALERIA (auto-scroll + manual drag/scroll) ── */
+    #galeria{background:var(--fg);padding:64px 0;overflow:hidden}
+    .gal-marquee{position:relative;width:100%;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);cursor:grab;scroll-behavior:auto}
+    .gal-marquee::-webkit-scrollbar{display:none}
+    .gal-marquee.dragging{cursor:grabbing}
+    .gal-track{display:flex;gap:20px;width:max-content}
+    .gal-track img{height:520px;width:auto;max-width:none;object-fit:cover;display:block;filter:brightness(.95) contrast(1.05);transition:filter .3s ease;flex-shrink:0;pointer-events:auto;user-select:none;-webkit-user-drag:none}
+    .gal-track img:hover{filter:brightness(1.05) contrast(1.1)}
+    @media(max-width:900px){#galeria{padding:40px 0}.gal-track{gap:12px}.gal-track img{height:340px}}
+    /* Lightbox */
+    .lb{position:fixed;inset:0;background:rgba(20,18,15,.95);display:none;align-items:center;justify-content:center;z-index:9999;padding:24px;cursor:zoom-out}
+    .lb.on{display:flex}
+    .lb img{max-width:95%;max-height:92vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+    .lb-close{position:absolute;top:20px;right:28px;color:#F5EDE3;font-size:38px;font-family:var(--fh);cursor:pointer;line-height:1}
+    .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#F5EDE3;font-size:48px;font-family:var(--fh);cursor:pointer;padding:12px 20px;user-select:none;opacity:.7;transition:opacity .2s}
+    .lb-nav:hover{opacity:1}
+    .lb-prev{left:16px}.lb-next{right:16px}
+
+    /* ── CENNIK (compact) ── */
+    #cennik{background:var(--lb)}
+    .prices{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:32px}
+    .pc{padding:28px 22px;position:relative}
+    .pc.half{background:linear-gradient(145deg,#E8ECF0,#D4DBE4);border-left:3px solid transparent}
+    .pc.half:hover{border-left-color:var(--tc)}
+    .pc.day{background:linear-gradient(145deg,#2A3A52,#1E2D42);border-left:3px solid var(--tc)}
+    .pc.day::after{content:'POLECAMY';position:absolute;top:-1px;right:16px;font-family:var(--fh);font-size:8px;letter-spacing:2px;background:var(--tc);color:#fff;padding:3px 8px}
+    .pc.evening{background:linear-gradient(145deg,#3D2A1A,#2A1E14);border-left:3px solid #E8A862;border-top:1px solid rgba(232,168,98,.2)}
+    .pc.evening::after{content:'🌙 NOWOŚĆ';position:absolute;top:-1px;right:16px;font-family:var(--fh);font-size:8px;letter-spacing:2px;background:#E8A862;color:#1C1A17;padding:3px 8px}
+    .pc.custom{background:linear-gradient(145deg,#1C1A17,#2A2520)}
+    .pc-badge{display:inline-block;font-size:8px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;margin-bottom:12px}
+    .pc.half .pc-badge{background:rgba(196,113,59,.1);color:var(--tc)}
+    .pc.day .pc-badge{background:rgba(255,162,102,.2);color:#FFA266}
+    .pc.evening .pc-badge{background:rgba(232,168,98,.15);color:#E8A862}
+    .pc.custom .pc-badge{background:rgba(255,255,255,.1);color:rgba(255,255,255,.7)}
+    .pc-name{font-family:var(--fh);font-size:24px;letter-spacing:2px;line-height:1;margin-bottom:4px}
+    .pc.half .pc-name{color:var(--ch)}
+    .pc.day .pc-name,.pc.custom .pc-name,.pc.evening .pc-name{color:#F5EDE3}
+    .pc-limit{font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+    .pc.half .pc-limit{color:rgba(44,44,44,.4)}
+    .pc.day .pc-limit,.pc.custom .pc-limit,.pc.evening .pc-limit{color:rgba(245,237,227,.4)}
+    .pc-price-row{display:flex;align-items:baseline;gap:3px;margin-bottom:3px}
+    .pc-amt{font-family:var(--fh);font-size:44px;letter-spacing:-1px;color:var(--tc);line-height:1}
+    .pc-zl{font-family:var(--fh);font-size:18px;color:var(--tc);opacity:.6}
+    .pc-unit{font-size:11px;font-weight:500;margin-bottom:14px}
+    .pc.half .pc-unit{color:rgba(44,44,44,.35)}
+    .pc.day .pc-unit,.pc.custom .pc-unit,.pc.evening .pc-unit{color:rgba(245,237,227,.35)}
+    .pc-note{font-size:11px;line-height:1.6}
+    .pc.half .pc-note{color:rgba(44,44,44,.5)}
+    .pc.day .pc-note,.pc.custom .pc-note,.pc.evening .pc-note{color:rgba(245,237,227,.45)}
+    .pc-usecases{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px}
+    .pc-usecase{font-size:9px;font-weight:600;letter-spacing:1px;padding:3px 7px;background:rgba(232,168,98,.1);color:#E8A862;border:1px solid rgba(232,168,98,.15)}
+    .price-footer{margin-top:16px;font-size:11px;color:rgba(44,44,44,.3);font-style:italic}
+
+    /* ── DYNAMICZNE CENY (expandable) ── */
+    .expand-btn{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(44,44,44,.15);padding:8px 16px;font-family:var(--fb);font-size:11px;font-weight:600;color:rgba(44,44,44,.5);cursor:pointer;margin-top:16px;letter-spacing:.5px;transition:all .2s}
+    .expand-btn:hover{border-color:var(--tc);color:var(--tc)}
+    .expand-content{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .expand-content.open{max-height:400px}
+    .pt-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:16px}
+    .pt-cell{padding:10px 8px;text-align:center;background:rgba(196,113,59,.05);border-top:2px solid var(--tc)}
+    .pt-day{font-size:9px;font-weight:700;letter-spacing:1px;color:rgba(44,44,44,.5);margin-bottom:3px}
+    .pt-time{font-size:9px;color:rgba(44,44,44,.35);margin-bottom:4px}
+    .pt-price{font-family:var(--fh);font-size:18px;color:var(--tc)}
+    .pt-tier{font-size:8px;color:rgba(44,44,44,.3)}
+
+    /* ── LOKALIZACJA ── */
+    .loc-inner-v2{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.3fr 1fr;gap:0;align-items:stretch}
+    .loc-map-wrap{position:relative;min-height:420px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--db)}
+    .loc-map-svg{width:100%;height:100%;object-fit:contain;display:block}
+    .loc-info-v2{padding:48px 32px;display:flex;flex-direction:column;justify-content:center;gap:16px;background:rgba(28,26,23,.95);border-left:1px solid rgba(196,113,59,.1)}
+    .loc-address{font-size:15px;color:var(--cr);font-weight:600;line-height:1.6}
+    .loc-details{display:flex;flex-direction:column;gap:10px}
+    .loc-detail{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(248,243,237,.5)}
+    .loc-detail svg{width:18px;height:18px;stroke:var(--tc);stroke-width:1.5;fill:none;flex-shrink:0}
+    .loc-gmaps{display:inline-flex;align-items:center;gap:6px;margin-top:4px;font-size:12px;font-weight:600;color:var(--tc);text-decoration:none;letter-spacing:.5px;border:1px solid rgba(196,113,59,.3);padding:10px 18px;transition:all .2s;align-self:flex-start}
+    .loc-gmaps:hover{background:rgba(196,113,59,.1);border-color:var(--tc)}
+
+    /* ── REZERWACJA ── */
+    #rezerwacja{background:var(--db);padding:64px 24px}
+    .book-inner{max-width:1100px;margin:0 auto}
+    .book-title{font-family:var(--fh);font-size:clamp(32px,6vw,48px);letter-spacing:3px;color:var(--cr);line-height:.95;margin-bottom:10px}
+    .book-sub{font-size:13px;color:rgba(248,243,237,.4);margin-bottom:24px;max-width:500px;line-height:1.6}
+    .cal-embed{min-height:500px}
+
+    /* Jak działa steps */
+    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:32px}
+    .step-card{background:var(--cr);padding:28px 22px;position:relative;border-left:3px solid transparent;transition:border-color .3s,background .3s}
+    .step-card:hover{border-left-color:var(--tc);background:#fff}
+    .step-num{font-family:var(--fh);font-size:52px;color:rgba(196,113,59,.1);line-height:1;margin-bottom:12px}
+    .step-ico{color:var(--tc);margin-bottom:12px}
+    .step-title{font-size:14px;font-weight:700;color:var(--ch);margin-bottom:6px}
+    .step-desc{font-size:12px;color:rgba(44,44,44,.5);line-height:1.6}
+
+    /* ── FOOTER / KONTAKT ── */
+    footer{background:var(--ch);padding:48px 24px;border-top:1px solid rgba(196,113,59,.15)}
+    .ft-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+    .ft-tag{font-family:var(--fa);font-style:italic;font-size:13px;color:rgba(248,243,237,.3);margin-top:12px;line-height:1.6}
+    .ft-co{font-size:10px;color:rgba(248,243,237,.15);margin-top:8px;line-height:1.6}
+    .ft-colt{font-size:10px;font-weight:600;letter-spacing:2px;color:rgba(248,243,237,.25);text-transform:uppercase;margin-bottom:12px}
+    .ft-links{list-style:none;display:flex;flex-direction:column;gap:6px}
+    .ft-links a{font-size:13px;color:rgba(248,243,237,.5);text-decoration:none}
+    .ft-links a:hover{color:var(--tc)}
+    .ft-bot{max-width:1100px;margin:20px auto 0;padding-top:16px;border-top:1px solid rgba(248,243,237,.06);display:flex;justify-content:space-between;align-items:center}
+    .ft-copy{font-size:10px;color:rgba(248,243,237,.12)}
+    .ft-blinks{display:flex;gap:16px}
+    .ft-blinks a{font-size:10px;color:rgba(248,243,237,.2);text-decoration:none}
+
+    /* ── OVERLAY PANELS ── */
+    .panel{position:fixed;inset:0;z-index:300;background:rgba(28,26,23,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);overflow-y:auto;-webkit-overflow-scrolling:touch;display:none;padding:80px 24px 40px}
+    .panel.open{display:block}
+    .panel-close{position:fixed;top:16px;right:24px;z-index:301;background:none;border:none;font-size:32px;color:rgba(248,243,237,.4);cursor:pointer}
+    .panel-inner{max-width:900px;margin:0 auto}
+
+    /* Wyposażenie panel */
+    .eq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:32px}
+    .eq-card{background:rgba(248,243,237,.04);border:1px solid rgba(248,243,237,.06);padding:24px 20px}
+    .eq-title{font-family:var(--fh);font-size:20px;letter-spacing:2px;color:var(--cr);margin-bottom:6px}
+    .eq-desc{font-size:12px;color:rgba(248,243,237,.35);line-height:1.6;margin-bottom:10px}
+    .eq-feats{list-style:none;display:flex;flex-direction:column;gap:4px}
+    .eq-feats li{font-size:11px;color:rgba(248,243,237,.45);display:flex;align-items:center;gap:6px}
+    .eq-feats li::before{content:'';width:3px;height:3px;border-radius:50%;background:var(--tc)}
+
+    /* Studio Pro panel */
+    .sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:32px}
+    .sp-card{background:rgba(248,243,237,.04);border:1px solid rgba(248,243,237,.06);border-top:3px solid var(--tc);padding:24px 20px}
+    .sp-emoji{font-size:28px;margin-bottom:12px}
+    .sp-title{font-family:var(--fh);font-size:20px;letter-spacing:2px;color:var(--cr);margin-bottom:6px}
+    .sp-desc{font-size:12px;color:rgba(248,243,237,.35);line-height:1.6}
+
+    /* ── MOBILE ── */
+    .mob-menu{display:none;position:fixed;inset:0;background:rgba(248,243,237,.99);z-index:200;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+    .mob-menu.open{display:flex}
+    .mob-menu a{font-family:var(--fh);font-size:clamp(28px,8vw,44px);letter-spacing:3px;color:var(--ch);text-decoration:none}
+    .mob-menu a:hover{color:var(--tc)}
+    .mob-close{position:absolute;top:18px;right:24px;font-size:32px;background:none;border:none;cursor:pointer;color:rgba(44,44,44,.4)}
+
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .svc-grid,.sp-grid,.steps-grid{grid-template-columns:1fr}
+      .prices{grid-template-columns:1fr 1fr}
+      .eq-grid{grid-template-columns:1fr}
+      .gal-grid{grid-template-columns:1fr 1fr}
+      .ft-inner{grid-template-columns:1fr}
+      .pt-grid{grid-template-columns:1fr}
+      .h-stats{flex-wrap:wrap}
+      .h-stat{min-width:33%}
+      .sec{padding:48px 16px}
+      .loc-inner{grid-template-columns:1fr;text-align:center}
+      .loc-inner-v2{grid-template-columns:1fr}
+      .loc-map-wrap{min-height:280px}
+      .loc-info-v2{border-left:none;border-top:1px solid rgba(196,113,59,.1);padding:32px 20px;align-items:center;text-align:center}
+      .loc-gmaps{align-self:center}
+      .loc-info{align-items:center}
+      #galeria{padding:32px 0}
+      .panel{padding:70px 16px 32px}
+    }
+    @media(max-width:480px){
+      .h-hl{font-size:40px}
+      .h-sub{font-size:13px}
+      .h-pills{gap:4px}
+      .h-pill{font-size:9px;padding:3px 7px}
+      .h-btns{flex-direction:column}
+      .h-btns a{width:100%;justify-content:center}
+      .h-stat{min-width:50%;padding:10px 12px}
+      .h-stat-n{font-size:17px}
+      .title{font-size:28px}
+      .gal-grid{grid-template-columns:1fr}
+      .gal-grid img{height:180px}
+      .steps-grid{grid-template-columns:1fr 1fr}
+      .pc-amt{font-size:36px}
+      .prices{grid-template-columns:1fr}
+      .pt-grid{grid-template-columns:1fr 1fr}
+      .ft-bot{flex-direction:column;gap:8px;text-align:center}
+    }
+    /* ── FLOATING CONTACT BAR ── */
+    .contact-bar{position:fixed;bottom:0;left:0;right:0;z-index:150;display:flex;gap:2px;transform:translateY(100%);transition:transform .4s ease}
+    .contact-bar.visible{transform:translateY(0)}
+    .contact-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 16px;font-family:var(--fb);font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.3px;transition:background .2s}
+    .cbar-call{background:#C4713B;color:#fff}
+    .cbar-call:hover{background:#d4834e}
+    .cbar-email{background:#2A3A52;color:#F5EDE3}
+    .cbar-email:hover{background:#3A4A62}
+    .cbar-call svg,.cbar-email svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;flex-shrink:0}
+    @media(min-width:769px){
+      .contact-bar{left:auto;right:24px;bottom:24px;width:auto;flex-direction:column;gap:8px;transform:translateX(0);opacity:0;pointer-events:none;transition:opacity .3s}
+      .contact-bar.visible{opacity:1;pointer-events:auto;transform:translateX(0)}
+      .contact-bar a{border-radius:6px;padding:12px 20px;flex:none;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <svg width="28" height="28" viewBox="0 0 80 80"><rect width="80" height="80" fill="#1C1A17" rx="4"/><rect x="16" y="14" width="5" height="52" rx="2.5" fill="#C4713B"/><text x="30" y="58" font-family="'Bebas Neue',sans-serif" font-size="56" font-weight="700" fill="#F5EDE3" letter-spacing="2">P</text><circle cx="66" cy="20" r="5" fill="#E04040"/></svg>
+    <span class="nav-word">PRACOWNIA</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#uslugi">Przestrzeń</a></li>
+    <li><a href="#cennik">Cennik</a></li>
+    <li><a href="#lokalizacja">Lokalizacja</a></li>
+    <li><a href="javascript:void(0)" onclick="openPanel('panelWyposazenie')">Wyposażenie</a></li>
+    <li><a href="javascript:void(0)" onclick="openPanel('panelStudioPro')" style="color:var(--tc)">Studio Pro</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#rezerwacja" class="nav-cta">Zarezerwuj</a></li>
+  </ul>
+  <button class="hamburger" id="hbtn" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobmenu">
+  <button class="mob-close" id="mobclose">&times;</button>
+  <a href="#uslugi" class="ml">Przestrzeń</a>
+  <a href="#cennik" class="ml">Cennik</a>
+  <a href="javascript:void(0)" onclick="openPanel('panelWyposazenie');closeMob()" class="ml">Wyposażenie</a>
+  <a href="javascript:void(0)" onclick="openPanel('panelStudioPro');closeMob()" class="ml" style="color:var(--tc)">Studio Pro</a>
+  <a href="#rezerwacja" class="ml" style="color:var(--tc)">Rezerwacja</a>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="hero">
+  <div class="h-bg"></div>
+  <div class="h-ov"></div>
+  <div class="h-inner">
+    <p class="h-eye">Warszawa · Mehoffera 26 · Codziennie 08:00–24:00</p>
+    <h1 class="h-hl">Twoja przestrzeń.<br>Twoje <em>zasady</em>.</h1>
+    <p class="h-sub">30 m² industrialnego klimatu — nagrywaj, szkol, spotykaj się. Rzutnik, muzyka, oświetlenie i kawa w cenie.</p>
+    <div class="h-pills">
+      <span class="h-pill">Rzutnik z pointerem</span>
+      <span class="h-pill">Muzyka — Ty kontrolujesz</span>
+      <span class="h-pill">Smart lighting</span>
+      <span class="h-pill">Drukarka Wi-Fi</span>
+      <span class="h-pill">Kawa i woda w cenie</span>
+      <span class="h-pill">Self check-in · 08–24</span>
+      <span class="h-pill">Sprzątanie w cenie</span>
+    </div>
+    <div class="h-btns">
+      <a href="#rezerwacja" class="btn-p"><span class="rec-dot"></span>Zarezerwuj teraz</a>
+      <a href="#cennik" class="btn-g">Sprawdź cennik →</a>
+    </div>
+  </div>
+  <div class="h-stats">
+    <div class="h-stat"><div class="h-stat-n">30</div><div class="h-stat-l">m² przestrzeni</div></div>
+    <div class="h-stat"><div class="h-stat-n">08–24</div><div class="h-stat-l">Codziennie</div></div>
+    <div class="h-stat"><div class="h-stat-n">100%</div><div class="h-stat-l">Bezobsługowo</div></div>
+    <div class="h-stat"><div class="h-stat-n">∞</div><div class="h-stat-l">Kawa &amp; woda</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ USŁUGI (compact) ═══════════ -->
+<section id="uslugi" class="sec">
+  <div class="sec-inner">
+    <div class="label"><div class="label-line"></div><span class="label-text">Co oferujemy</span></div>
+    <div class="title">TRZY OBLICZA PRZESTRZENI</div>
+    <p class="sub">Jedna przestrzeń, trzy zastosowania. Wszystko w cenie — rzutnik, muzyka, oświetlenie, kawa i woda.</p>
+    <div class="svc-grid">
+      <div class="svc svc-studio">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="15" height="11" rx="1.5"/><path d="M17 8l5-3v10l-5-3V8z"/></svg></div>
+        <div class="svc-num">01</div>
+        <span class="svc-tag">Content Creation</span>
+        <div class="svc-name">STUDIO</div>
+        <p class="svc-desc">Nagrania YouTube, Reels, podcasty, sesje foto/video. Smart lighting i muzyka gotowe od pierwszej chwili.</p>
+      </div>
+      <div class="svc svc-szkolenia">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="1.5"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="svc-num">02</div>
+        <span class="svc-tag">Edukacja i biznes</span>
+        <div class="svc-name">SZKOLENIA</div>
+        <p class="svc-desc">Warsztaty, prezentacje, webinary. Rzutnik z pointerem bezprzewodowym, WiFi 100 Mbps.</p>
+      </div>
+      <div class="svc svc-spotkania">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="19" cy="7" r="2"/><path d="M23 21v-2a2 2 0 0 0-2-2h-1"/></svg></div>
+        <div class="svc-num">03</div>
+        <span class="svc-tag">Eventy i spotkania</span>
+        <div class="svc-name">SPOTKANIA</div>
+        <p class="svc-desc">Networking, urodziny, imprezy prywatne. Muzyka i nastrojowe oświetlenie — wszystko ustawiasz sam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GALERIA ═══════════ -->
+<section id="galeria">
+  <div class="gal-marquee">
+    <div class="gal-track">
+      <img src="pracownia-01.jpg" alt="PRACOWNIA — widok ogólny przestrzeni" loading="lazy">
+      <img src="pracownia-02.jpg" alt="PRACOWNIA — strefa stołu i sofy" loading="lazy">
+      <img src="pracownia-03.jpg" alt="PRACOWNIA — jadalnia z widokiem na salon" loading="lazy">
+      <img src="pracownia-04.jpg" alt="PRACOWNIA — strefa wypoczynkowa" loading="lazy">
+      <img src="pracownia-05.jpg" alt="PRACOWNIA — sofa i regał industrialny" loading="lazy">
+      <img src="pracownia-06.jpg" alt="PRACOWNIA — sofa przy oknie" loading="lazy">
+      <img src="pracownia-07.jpg" alt="PRACOWNIA — kącik relaksu" loading="lazy">
+      <img src="pracownia-08.jpg" alt="PRACOWNIA — detale wnętrza" loading="lazy">
+      <img src="pracownia-09.jpg" alt="PRACOWNIA — stół z projekcją" loading="lazy">
+      <img src="pracownia-10.jpg" alt="PRACOWNIA — detal dekoracyjny przy oknie" loading="lazy">
+      <img src="pracownia-11.jpg" alt="PRACOWNIA — aneks kuchenny" loading="lazy">
+      <img src="pracownia-12.jpg" alt="PRACOWNIA — strefa kawowa z hokerami" loading="lazy">
+      <img src="pracownia-13.jpg" alt="PRACOWNIA — ekspres De'Longhi Magnifica" loading="lazy">
+      <img src="pracownia-14.jpg" alt="PRACOWNIA — kran z wodą filtrowaną" loading="lazy">
+      <img src="pracownia-15.jpg" alt="PRACOWNIA — stanowisko nagraniowe" loading="lazy">
+      <img src="pracownia-16.jpg" alt="PRACOWNIA — mikrofon pojemnościowy" loading="lazy">
+      <img src="pracownia-17.jpg" alt="PRACOWNIA — sprzęt RØDE" loading="lazy">
+      <img src="pracownia-18.jpg" alt="PRACOWNIA — RØDE Wireless GO" loading="lazy">
+      <img src="pracownia-19.jpg" alt="PRACOWNIA — łazienka z umywalką" loading="lazy">
+      <img src="pracownia-20.jpg" alt="PRACOWNIA — toaleta" loading="lazy">
+      <!-- duplikat dla bezszwowej pętli -->
+      <img src="pracownia-01.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-02.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-03.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-04.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-05.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-06.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-07.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-08.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-09.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-10.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-11.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-12.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-13.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-14.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-15.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-16.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-17.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-18.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-19.jpg" alt="" aria-hidden="true" loading="lazy">
+      <img src="pracownia-20.jpg" alt="" aria-hidden="true" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" onclick="if(event.target.id==='lb'||event.target.classList.contains('lb-close'))closeLB()">
+  <span class="lb-close" onclick="closeLB()">×</span>
+  <span class="lb-nav lb-prev" onclick="event.stopPropagation();navLB(-1)">‹</span>
+  <img id="lb-img" src="" alt="">
+  <span class="lb-nav lb-next" onclick="event.stopPropagation();navLB(1)">›</span>
+</div>
+<script>
+(function(){
+  const marquee=document.querySelector('.gal-marquee');
+  const track=document.querySelector('.gal-track');
+  const imgs=Array.from(track.querySelectorAll('img')).filter(im=>!im.hasAttribute('aria-hidden'));
+  const lb=document.getElementById('lb');
+  const lbImg=document.getElementById('lb-img');
+  let idx=0;
+
+  // ── Lightbox ──
+  track.querySelectorAll('img').forEach((im)=>{
+    im.addEventListener('click',(e)=>{
+      if(dragMoved)return; // klik po przeciągnięciu nie otwiera lightboxa
+      const src=im.getAttribute('src');
+      idx=imgs.findIndex(x=>x.getAttribute('src')===src);
+      if(idx<0)idx=0;
+      lbImg.src=imgs[idx].src;lbImg.alt=imgs[idx].alt;
+      lb.classList.add('on');
+    });
+  });
+  window.closeLB=()=>lb.classList.remove('on');
+  window.navLB=(d)=>{idx=(idx+d+imgs.length)%imgs.length;lbImg.src=imgs[idx].src;lbImg.alt=imgs[idx].alt};
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')navLB(-1);if(e.key==='ArrowRight')navLB(1)});
+
+  // ── Auto-scroll przez scrollLeft (działa razem z manualnym scrollem) ──
+  const SPEED=0.6; // px na klatkę (~36 px/s)
+  let paused=false;
+  let resumeTimer=null;
+  let halfWidth=0;
+
+  function recalc(){halfWidth=track.scrollWidth/2;}
+  // czekamy na załadowanie obrazków, żeby halfWidth było prawidłowe
+  if(track.querySelectorAll('img').length){
+    let loaded=0;const total=track.querySelectorAll('img').length;
+    track.querySelectorAll('img').forEach(im=>{
+      if(im.complete){if(++loaded===total)recalc()}
+      else im.addEventListener('load',()=>{if(++loaded===total)recalc()});
+    });
+  }
+  window.addEventListener('resize',recalc);
+
+  function tick(){
+    if(!paused&&halfWidth){
+      marquee.scrollLeft+=SPEED;
+      if(marquee.scrollLeft>=halfWidth)marquee.scrollLeft-=halfWidth;
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  function pauseAuto(){paused=true;clearTimeout(resumeTimer);resumeTimer=setTimeout(()=>{paused=false},2500);}
+
+  // ── Drag myszką ──
+  let isDown=false,startX=0,startScroll=0,dragMoved=false;
+  marquee.addEventListener('mousedown',e=>{isDown=true;dragMoved=false;startX=e.pageX;startScroll=marquee.scrollLeft;marquee.classList.add('dragging');paused=true;clearTimeout(resumeTimer);});
+  window.addEventListener('mouseup',()=>{if(!isDown)return;isDown=false;marquee.classList.remove('dragging');resumeTimer=setTimeout(()=>{paused=false;dragMoved=false},2500);});
+  window.addEventListener('mousemove',e=>{
+    if(!isDown)return;
+    const dx=e.pageX-startX;
+    if(Math.abs(dx)>5)dragMoved=true;
+    marquee.scrollLeft=startScroll-dx;
+  });
+
+  // ── Touch / scroll kółkiem / trackpad → pauza auto ──
+  marquee.addEventListener('touchstart',pauseAuto,{passive:true});
+  marquee.addEventListener('wheel',pauseAuto,{passive:true});
+  marquee.addEventListener('scroll',()=>{
+    // pętla także przy ręcznym scrollu
+    if(halfWidth){
+      if(marquee.scrollLeft>=halfWidth)marquee.scrollLeft-=halfWidth;
+      else if(marquee.scrollLeft<0)marquee.scrollLeft+=halfWidth;
+    }
+  },{passive:true});
+})();
+</script>
+
+<!-- ═══════════ CENNIK (compact) ═══════════ -->
+<section id="cennik" class="sec">
+  <div class="sec-inner">
+    <div class="label"><div class="label-line"></div><span class="label-text">Cennik</span></div>
+    <div class="title">PRZEJRZYSTE CENY</div>
+    <p class="sub">Wszystko w cenie — rzutnik, oświetlenie, klimatyzacja, kawa, woda, WiFi, a także sprzątanie i uzupełnienie asortymentu po każdym wynajmie.</p>
+    <div style="display:inline-flex;gap:8px;margin-top:14px;padding:6px;background:rgba(44,44,44,.06);border-radius:3px;font-size:11px;font-weight:600">
+      <span style="padding:6px 14px;background:var(--tc);color:#fff;border-radius:2px;letter-spacing:.5px">KLIENT INDYWIDUALNY · brutto</span>
+      <span style="padding:6px 14px;color:rgba(44,44,44,.5);letter-spacing:.5px">FIRMA · netto (faktura VAT)</span>
+    </div>
+    <div class="prices">
+      <div class="pc half">
+        <span class="pc-badge">Elastyczny</span>
+        <div class="pc-name">RANO / POPOŁUDNIE</div>
+        <div class="pc-limit">5 godzin</div>
+        <div class="pc-price-row"><div class="pc-amt">od 560</div><div class="pc-zl">zł</div></div>
+        <div class="pc-unit">brutto / slot · <strong style="color:rgba(44,44,44,.7)">455 zł netto</strong></div>
+        <p class="pc-note">Rano 08–13 lub Popołudnie 15–20. W cenie: wyposażenie, kawa, WiFi, self-check-in, sprzątanie i uzupełnienie asortymentu.</p>
+        <a href="#rezerwacja" class="btn-p" style="width:100%;justify-content:center;margin-top:14px">Zarezerwuj →</a>
+      </div>
+      <div class="pc day">
+        <span class="pc-badge">Dla firm</span>
+        <div class="pc-name">POPOŁ. + WIECZÓR</div>
+        <div class="pc-limit">9 godzin (15:00–24:00)</div>
+        <div class="pc-price-row"><div class="pc-amt">od 890</div><div class="pc-zl">zł</div></div>
+        <div class="pc-unit">brutto / combo · <strong style="color:rgba(245,237,227,.7)">724 zł netto</strong></div>
+        <p class="pc-note">Combo 9h z priorytetowym wsparciem i fakturą VAT. Sprzątanie i uzupełnienie asortymentu w cenie.</p>
+        <a href="#rezerwacja" class="btn-p" style="width:100%;justify-content:center;margin-top:14px">Zarezerwuj →</a>
+      </div>
+      <div class="pc evening">
+        <span class="pc-badge">Wieczór</span>
+        <div class="pc-name">WIECZÓR</div>
+        <div class="pc-limit">5 godzin (19:00–24:00)</div>
+        <div class="pc-price-row"><div class="pc-amt">od 650</div><div class="pc-zl">zł</div></div>
+        <div class="pc-unit">brutto · <strong style="color:rgba(245,237,227,.7)">528 zł netto</strong> · Pt–Sb: 790 / 642 zł</div>
+        <p class="pc-note">Film na projektorze, kolacja z przyjaciółmi, urodziny, kinder bal — Twoja kameralna przestrzeń wieczorem. Sprzątanie w cenie.</p>
+        <div class="pc-usecases">
+          <span class="pc-usecase">🎂 Urodziny</span>
+          <span class="pc-usecase">🎬 Seans filmowy</span>
+          <span class="pc-usecase">👶 Kinder bal</span>
+          <span class="pc-usecase">🍕 Kolacja z ekipą</span>
+        </div>
+        <a href="#rezerwacja" class="btn-p" style="width:100%;justify-content:center;margin-top:14px;background:#E8A862;color:#1C1A17">Zarezerwuj wieczór →</a>
+      </div>
+      <div class="pc custom">
+        <span class="pc-badge">Szyte na miarę</span>
+        <div class="pc-name">PAKIET DEDYKOWANY</div>
+        <div class="pc-limit">Wycena indywidualna</div>
+        <div class="pc-price-row"><div class="pc-amt" style="font-size:28px">INDYWIDUALNA</div></div>
+        <div class="pc-unit">bezpłatna konsultacja · oferta w 24h</div>
+        <p class="pc-note">Spotkania cykliczne (rabat do -20%), eventy z cateringiem, warsztaty. Umowa ramowa, faktura VAT. Sprzątanie w cenie.</p>
+        <a href="#kontakt" class="btn-p" style="width:100%;justify-content:center;margin-top:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)">Opisz swoje potrzeby →</a>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;padding-top:28px;border-top:1px solid rgba(44,44,44,.08)">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:2px;color:var(--ch);margin-bottom:4px">PEŁNY CENNIK SLOTÓW</div>
+      <p style="font-size:12px;color:rgba(44,44,44,.5);margin-bottom:18px">Wszystkie kombinacje slotów i dni tygodnia. <strong style="color:var(--tc)">Brutto</strong> dla klientów indywidualnych · <strong style="color:rgba(44,44,44,.7)">netto</strong> dla firm (faktura VAT).</p>
+
+      <div style="overflow-x:auto">
+        <table style="width:100%;border-collapse:collapse;font-size:12px;min-width:560px">
+          <thead>
+            <tr style="background:rgba(196,113,59,.08);border-bottom:2px solid var(--tc)">
+              <th style="text-align:left;padding:12px 14px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1.5px;color:var(--ch);font-weight:400">Slot</th>
+              <th style="text-align:left;padding:12px 14px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1.5px;color:var(--ch);font-weight:400">Godziny</th>
+              <th style="text-align:right;padding:12px 14px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1.5px;color:var(--ch);font-weight:400">Pn–Cz</th>
+              <th style="text-align:right;padding:12px 14px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1.5px;color:var(--ch);font-weight:400">Pt–Sb</th>
+              <th style="text-align:right;padding:12px 14px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1.5px;color:var(--ch);font-weight:400">Niedziela</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(44,44,44,.06)">
+              <td style="padding:14px;font-weight:600;color:var(--ch)">☀️ Rano</td>
+              <td style="padding:14px;color:rgba(44,44,44,.5)">08:00–13:00 · 5h</td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1F8A4C;background:rgba(31,138,76,.1);position:relative">560 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(31,138,76,.7);margin-top:1px">455 zł netto</span><span style="display:block;font-size:8px;font-family:var(--fb);font-weight:700;letter-spacing:1px;color:#1F8A4C;margin-top:3px">★ NAJTANIEJ</span></td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--tc)">740 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">602 zł netto</span></td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--tc)">560 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">455 zł netto</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(44,44,44,.06);background:rgba(196,113,59,.03)">
+              <td style="padding:14px;font-weight:600;color:var(--ch)">🌤 Popołudnie</td>
+              <td style="padding:14px;color:rgba(44,44,44,.5)">15:00–20:00 · 5h</td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--tc)">680 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">553 zł netto</span></td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--tc)">860 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">699 zł netto</span></td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--tc)">680 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">553 zł netto</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(44,44,44,.06)">
+              <td style="padding:14px;font-weight:600;color:var(--ch)">🌙 Wieczór</td>
+              <td style="padding:14px;color:rgba(44,44,44,.5)">19:00–24:00 · 5h</td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#E8A862">650 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">528 zł netto</span></td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#E8A862">790 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">642 zł netto</span></td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#E8A862">650 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">528 zł netto</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(44,44,44,.06);background:rgba(196,113,59,.03)">
+              <td style="padding:14px;font-weight:600;color:var(--ch)">📅 Combo Popoł.+Wieczór</td>
+              <td style="padding:14px;color:rgba(44,44,44,.5)">15:00–24:00 · 9h</td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:#1F8A4C;background:rgba(31,138,76,.1)">890 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(31,138,76,.7);margin-top:1px">724 zł netto</span><span style="display:block;font-size:8px;font-family:var(--fb);font-weight:700;letter-spacing:1px;color:#1F8A4C;margin-top:3px">★ NAJLEPSZA CENA/H</span></td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--tc)">1 050 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">854 zł netto</span></td>
+              <td style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--tc)">890 zł<span style="display:block;font-size:10px;font-family:var(--fb);font-weight:500;color:rgba(44,44,44,.45);margin-top:1px">724 zł netto</span></td>
+            </tr>
+            <tr>
+              <td style="padding:14px;font-weight:600;color:var(--ch)">🎯 Pakiet dedykowany</td>
+              <td style="padding:14px;color:rgba(44,44,44,.5)">cykle, eventy, warsztaty</td>
+              <td colspan="3" style="text-align:right;padding:14px;font-family:'Bebas Neue',sans-serif;font-size:14px;color:rgba(44,44,44,.55);letter-spacing:1px">WYCENA INDYWIDUALNA · RABAT DO −20%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px;color:rgba(44,44,44,.4);margin-top:14px;font-style:italic;line-height:1.6">Wszystkie ceny netto + 23% VAT. W każdym slocie: rzutnik, oświetlenie, klimatyzacja, WiFi 100 Mbps, kawa i woda bez limitu, sprzątanie i uzupełnienie asortymentu po wynajmie. Maksymalnie do godziny 24:00. Anulacja bezpłatna do 48h przed terminem.</p>
+    </div>
+
+    <p class="price-footer">Wszystkie ceny netto + 23% VAT. Faktura VAT automatycznie na e-mail. Każda cena zawiera sprzątanie i uzupełnienie asortymentu po wynajmie — przychodzisz do gotowej, czystej przestrzeni.</p>
+  </div>
+</section>
+
+<!-- ═══════════ JAK DZIAŁA ═══════════ -->
+<section id="jakdziala" class="sec" style="background:var(--fg)">
+  <div class="sec-inner">
+    <div class="label"><div class="label-line"></div><span class="label-text">Jak to działa</span></div>
+    <div class="title">OD REZERWACJI DO KAWY W 4 KROKACH</div>
+    <p class="sub">Cztery proste kroki i jesteś w środku — z kawą, muzyką i pełną kontrolą nad przestrzenią.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <h3 class="step-title">Wybierz slot i pakiet</h3>
+        <p class="step-desc">Sprawdź kalendarz online. Rano (5h), popołudnie (5h) lub combo popołudnie+wieczór (9h).</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3 class="step-title">Potwierdź mailem lub telefonem</h3>
+        <p class="step-desc">Napisz lub zadzwoń — wystawiamy fakturę VAT do opłaty przelewem albo umawiamy płatność gotówką na miejscu.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3 class="step-title">Wejdź — kod SMS</h3>
+        <p class="step-desc">Kod do skrytki na klucz otrzymasz SMS-em. Żadnej recepcji — wchodzisz do czystej, przygotowanej przestrzeni.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-ico"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3 class="step-title">Działaj i twórz</h3>
+        <p class="step-desc">Przestrzeń jest Twoja. Steruj oświetleniem, muzyką i rzutnikiem z telefonu. Kawa i woda czekają.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LOKALIZACJA ═══════════ -->
+<section id="lokalizacja" style="background:var(--db);padding:0;position:relative;overflow:hidden">
+  <div class="loc-inner-v2">
+    <div class="loc-map-wrap">
+      <img src="map-sketch.svg" alt="Szkic mapy okolicy PRACOWNIA — Mehoffera 26, Tarchomin" class="loc-map-svg">
+    </div>
+    <div class="loc-info-v2">
+      <div class="label"><div class="label-line"></div><span class="label-text">Gdzie jesteśmy</span></div>
+      <div style="font-family:var(--fh);font-size:clamp(28px,5vw,42px);letter-spacing:3px;color:var(--cr);line-height:.95;margin-bottom:14px">ZNAJDŹ NAS</div>
+      <div class="loc-address">ul. Mehoffera 26 / lok. 19<br>03-131 Warszawa, Tarchomin</div>
+      <div class="loc-details">
+        <div class="loc-detail">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Obok Białołęckiego Ośrodka Sportu
+        </div>
+        <div class="loc-detail">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Self check-in — kod do skrytki na SMS
+        </div>
+        <div class="loc-detail">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Codziennie 08:00 – 24:00
+        </div>
+        <div class="loc-detail">
+          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/></svg>
+          Parking pod budynkiem, spokojna okolica
+        </div>
+      </div>
+      <a href="https://www.google.com/maps/search/Mehoffera+26,+03-131+Warszawa" target="_blank" rel="noopener" class="loc-gmaps">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        OTWÓRZ W GOOGLE MAPS →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ REZERWACJA ═══════════ -->
+<section id="rezerwacja">
+  <div class="book-inner">
+    <div class="label"><div class="label-line"></div><span class="label-text" style="color:rgba(196,113,59,.9)">Rezerwacja</span></div>
+    <div class="book-title">ZAREZERWUJ TERMIN</div>
+    <p class="book-sub">Napisz lub zadzwoń — odpowiadamy w ciągu kilku godzin. Sprawdzamy dostępność, rezerwujemy slot i wystawiamy fakturę VAT do opłaty przelewem (lub umawiamy płatność gotówką na miejscu). Płatności online uruchamiamy wkrótce.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:24px">
+      <a href="/cdn-cgi/l/email-protection#23484c4d5742485763535142404c544d4a420d505756474a4c1c505641494640571e71465946515442404942061113737162606c746d6a6205414c475a1e67594a46066016061b17061113474c41515a061160061362061362604b40066017061a1a06111359425146594651544c5442066017061b14061113737162606c746d6a066017061a1b0d0613620613627746514e4a4d061062061113061362704f4c570611130b4d530d06111371424d4c061113131b0e1210061160061113734c534c066016061b1156474d4a4606111312160e1113061160061113744a46405906601006611051061113121a0e1117061160061113604c4e414c06111312160e11170a06106206111306136260464f0611130b505756474a4c0611130611650611135059484c4f464d4a4606111306116506111350534c5748424d4a460611130611650611134655464d570a0610620611130613626a4e4a066017061a1a0611134a0611134d4259544a50484c061113061165061113454a514e420610620611130613626d6a73061113474c0611134542485756515a06106206111306136277464f46454c4d061062061113061362061362734c59475142544a424e" style="background:rgba(248,243,237,.04);border:1px solid rgba(196,113,59,.25);padding:36px 28px;text-decoration:none;display:flex;flex-direction:column;gap:14px;transition:all .25s">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#C4713B" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#F5EDE3;line-height:1;margin-bottom:6px">NAPISZ MAILA</div>
+          <div style="font-size:13px;color:#C4713B;font-weight:600;margin-bottom:8px"><span class="__cf_email__" data-cfemail="86ede9e8f2e7edf2c6f6f4e7e5e9f1e8efe7a8f5f2f3e2efe9">[email&#160;protected]</span></div>
+          <div style="font-size:11px;color:rgba(248,243,237,.45);line-height:1.6">Najwygodniej — w mailu jest gotowy szablon. Odpowiadamy w ciągu kilku godzin (Pn–Sb).</div>
+        </div>
+      </a>
+      <a href="tel:+48512760769" style="background:rgba(248,243,237,.04);border:1px solid rgba(196,113,59,.25);padding:36px 28px;text-decoration:none;display:flex;flex-direction:column;gap:14px;transition:all .25s">
+        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#C4713B" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 7.23 7.23l1.13-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:#F5EDE3;line-height:1;margin-bottom:6px">ZADZWOŃ</div>
+          <div style="font-size:13px;color:#C4713B;font-weight:600;margin-bottom:8px">+48 512 760 769</div>
+          <div style="font-size:11px;color:rgba(248,243,237,.45);line-height:1.6">Wolisz pogadać? Zadzwoń — od ręki sprawdzimy termin i odpowiemy na pytania.</div>
+        </div>
+      </a>
+    </div>
+
+    <div style="margin-top:24px;padding:18px 22px;background:rgba(196,113,59,.08);border-left:3px solid #C4713B;display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:12px;color:rgba(248,243,237,.6);line-height:1.6">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;color:#C4713B">PŁATNOŚĆ:</span>
+      <span>✓ Faktura VAT przelewem (rezerwacja po zaksięgowaniu)</span>
+      <span>✓ Gotówka na miejscu</span>
+      <span style="opacity:.5;font-style:italic">Płatności online (BLIK / karta) — wkrótce</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER / KONTAKT ═══════════ -->
+<footer id="kontakt">
+  <div class="ft-inner">
+    <div>
+      <svg viewBox="0 0 260 50" width="160" style="display:block">
+        <rect x="0" y="0" width="4" height="50" rx="2" fill="#C4713B"/>
+        <text x="14" y="36" font-family="'Bebas Neue',sans-serif" font-size="42" font-weight="700" fill="#F5EDE3" letter-spacing="5">PRACOWNIA</text>
+        <text x="14" y="50" font-family="'Libre Baskerville',serif" font-size="10.5" fill="#C4713B" font-style="italic" letter-spacing="1" opacity="0.7">przestrzeń na wynajem</text>
+      </svg>
+      <p class="ft-tag">Studio. Szkolenia. Spotkania.<br>Rzutnik, oświetlenie, kawa — zawsze w cenie.</p>
+      <p class="ft-co">Kulinarisk Solutions Sp. z o.o. | ul. Mehoffera 26/lok. 19, 03-131 Warszawa<br>NIP: 1133136673 | REGON: 528859742</p>
+    </div>
+    <div>
+      <div class="ft-colt">Kontakt</div>
+      <ul class="ft-links">
+        <li><a href="/cdn-cgi/l/email-protection#dab1b5b4aebbb1ae9aaaa8bbb9b5adb4b3bbf4a9aeafbeb3b5"><span class="__cf_email__" data-cfemail="690206071d08021d29191b080a061e070008471a1d1c0d0006">[email&#160;protected]</span></a></li>
+        <li><a href="tel:+48512760769">+48 512 760 769</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-colt">Nawigacja</div>
+      <ul class="ft-links">
+        <li><a href="#uslugi">Przestrzeń</a></li>
+        <li><a href="#cennik">Cennik</a></li>
+        <li><a href="javascript:void(0)" onclick="openPanel('panelWyposazenie')">Wyposażenie</a></li>
+        <li><a href="javascript:void(0)" onclick="openPanel('panelStudioPro')">Studio Pro</a></li>
+        <li><a href="#rezerwacja">Rezerwacja</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p class="ft-copy">© 2025 Kulinarisk Solutions Sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+    <div class="ft-blinks">
+      <a href="javascript:void(0)" onclick="document.getElementById('polityka').style.display='block'">Regulamin</a>
+      <a href="javascript:void(0)" onclick="document.getElementById('polityka').style.display='block'">Polityka prywatności</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════ PANEL: WYPOSAŻENIE ═══════════ -->
+<div class="panel" id="panelWyposazenie">
+  <button class="panel-close" onclick="closePanel('panelWyposazenie')">&times;</button>
+  <div class="panel-inner">
+    <div class="label"><div class="label-line"></div><span class="label-text">Wyposażenie</span></div>
+    <div class="title title-light">WSZYSTKO W CENIE WYNAJMU</div>
+    <p class="sub" style="color:rgba(248,243,237,.4)">Rzutnik, pointer, oświetlenie, klimatyzacja, głośniki, kawa i woda — zawsze w cenie. Dodatkowy sprzęt (kamery, mikrofony Rode) za dopłatą.</p>
+    <div class="eq-grid">
+      <div class="eq-card">
+        <div class="eq-title">RZUTNIK INTERAKTYWNY</div>
+        <p class="eq-desc">Projektor Full HD z pointerem bezprzewodowym. Łatwe podłączenie HDMI i WiFi.</p>
+        <ul class="eq-feats"><li>Pointer bezprzewodowy</li><li>Sterowanie z telefonu/tabletu</li><li>Prezentacje, warsztaty, szkolenia</li></ul>
+      </div>
+      <div class="eq-card">
+        <div class="eq-title">MUZYKA & DŹWIĘK</div>
+        <p class="eq-desc">System audio Bluetooth + WiFi. Spotify, Apple Music — sam wybierasz playlistę i głośność.</p>
+        <ul class="eq-feats"><li>Głośniki premium Bose</li><li>Sterowanie z aplikacji</li><li>Tryb ciszy na nagrania</li></ul>
+      </div>
+      <div class="eq-card">
+        <div class="eq-title">SMART LIGHTING</div>
+        <p class="eq-desc">Oświetlenie sterowane z telefonu. Gotowe sceny pod nagrania online, podcasty, webinary i Reels — w sekundę zmieniasz klimat.</p>
+        <ul class="eq-feats"><li>Tuya / Smart Life (app)</li><li>Sceny: studio / podcast / webinar / relaks</li><li>RGB akcentowe + temperatura barwowa</li></ul>
+      </div>
+      <div class="eq-card">
+        <div class="eq-title">KAWA & WODA</div>
+        <p class="eq-desc">Ekspres ciśnieniowy i dystrybutor wody. Bez limitu, zawsze w cenie.</p>
+        <ul class="eq-feats"><li>Kawa ziarnista premium</li><li>Woda filtrowana zimna/gorąca</li><li>Herbaty i cukier w zestawie</li></ul>
+      </div>
+    </div>
+    <div style="margin-top:24px;padding:16px;background:rgba(248,243,237,.04);border-left:3px solid var(--tc);display:flex;flex-wrap:wrap;gap:20px;font-size:11px;color:rgba(248,243,237,.4)">
+      <span>✓ WiFi 100 Mbps</span>
+      <span>✓ Klimatyzacja TCL FreshIN</span>
+      <span>✓ Self check-in (08:00–24:00)</span>
+      <span>✓ Projektor Dangbei Atom</span>
+      <span>✓ Drukarka Wi-Fi (HP LaserJet)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ PANEL: STUDIO PRO ═══════════ -->
+<div class="panel" id="panelStudioPro">
+  <button class="panel-close" onclick="closePanel('panelStudioPro')">&times;</button>
+  <div class="panel-inner">
+    <div class="label"><div class="label-line"></div><span class="label-text">Studio Pro</span></div>
+    <div class="title title-light">PEŁNA OBSŁUGA <span style="color:var(--tc)">PRODUKCJI</span></div>
+    <p class="sub" style="color:rgba(248,243,237,.4)">Nie musisz znać się na nagrywaniu. Operator, kamery, mikrofony Rode, montaż — od scenariusza po publikację.</p>
+    <div class="sp-grid">
+      <div class="sp-card">
+        <div class="sp-emoji">🎬</div>
+        <div class="sp-title">OPERATOR & SPRZĘT</div>
+        <p class="sp-desc">Profesjonalny operator, dodatkowe kamery, mikrofony Rode, oświetlenie studyjne, multi-kamerowa realizacja.</p>
+      </div>
+      <div class="sp-card">
+        <div class="sp-emoji">✂️</div>
+        <div class="sp-title">MONTAŻ & OBRÓBKA</div>
+        <p class="sp-desc">Montaż wideo, korekcja kolorów, formaty pod YouTube / Reels / TikTok. Materiały gotowe do publikacji.</p>
+      </div>
+      <div class="sp-card">
+        <div class="sp-emoji">🚀</div>
+        <div class="sp-title">CONTENT OD ZERA</div>
+        <p class="sp-desc">Scenariusz dla Twojego brandu, koncept kreatywny, prowadzenie marki osobistej. Od pomysłu po publikację.</p>
+      </div>
+    </div>
+    <div style="margin-top:2px;background:rgba(196,113,59,.08);border-left:3px solid var(--tc);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+      <div>
+        <div style="font-family:var(--fh);font-size:16px;letter-spacing:2px;color:var(--cr)">WYCENA INDYWIDUALNA</div>
+        <div style="font-size:11px;color:rgba(248,243,237,.3)">Opisz projekt — przygotujemy ofertę w 24h. Bezpłatna konsultacja.</div>
+      </div>
+      <a href="#kontakt" class="btn-p" onclick="closePanel('panelStudioPro')">Zapytaj o Studio Pro</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ POLITYKA PRYWATNOŚCI (modal) ═══════════ -->
+<div id="polityka" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.7);overflow-y:auto;padding:40px 20px">
+  <div style="max-width:800px;margin:0 auto;background:var(--lb);padding:48px 40px;position:relative">
+    <button onclick="document.getElementById('polityka').style.display='none'" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:28px;cursor:pointer;color:rgba(44,44,44,.4)">&times;</button>
+    <h2 style="font-family:var(--fh);font-size:28px;letter-spacing:2px;margin-bottom:20px">POLITYKA PRYWATNOŚCI</h2>
+    <div style="font-size:12px;color:rgba(44,44,44,.6);line-height:1.8">
+      <p><strong>1. Administrator:</strong> Kulinarisk Solutions Sp. z o.o., ul. Mehoffera 26/lok. 19, 03-131 Warszawa, NIP: 1133136673.</p>
+      <p><strong>2. Dane:</strong> Zbieramy dane z formularza kontaktowego i pliki cookies.</p>
+      <p><strong>3. Cel:</strong> Odpowiedzi na zapytania, realizacja rezerwacji, analiza ruchu.</p>
+      <p><strong>4. Prawa:</strong> Dostęp, sprostowanie, usunięcie danych. Kontakt: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="84efebeaf0e5eff0c4f4f6e5e7ebf3eaede5aaf7f0f1e0edeb">[email&#160;protected]</a>.</p>
+      <p><strong>5. Organ nadzorczy:</strong> PUODO, ul. Stawki 2, 00-193 Warszawa.</p>
+    </div>
+    <h2 style="font-family:var(--fh);font-size:28px;letter-spacing:2px;margin:32px 0 20px">REGULAMIN</h2>
+    <div style="font-size:12px;color:rgba(44,44,44,.6);line-height:1.8">
+      <p><strong>1.</strong> Regulamin określa zasady korzystania z PRACOWNIA (Kulinarisk Solutions Sp. z o.o.).</p>
+      <p><strong>2.</strong> Anulacja bezpłatna do 48h przed terminem. Po tym: 50% wartości.</p>
+      <p><strong>3.</strong> Opuszczenie lokalu do 23:00. Palenie zabronione.</p>
+      <p><strong>4.</strong> Klimatyzacja, rzutnik, oświetlenie, głośniki, WiFi, kawa i woda w cenie. Dodatkowy sprzęt za dopłatą.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING CONTACT BAR -->
+<div class="contact-bar" id="contactBar">
+  <a href="tel:+48512760769" class="cbar-call">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 7.23 7.23l1.13-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Zadzwoń: 512 760 769
+  </a>
+  <a href="/cdn-cgi/l/email-protection#254e4a4b51444e5165555744464a524b4c440b565150414c4a" class="cbar-email">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Napisz do nas
+  </a>
+</div>
+
+<!-- COOKIE BANNER -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(28,26,23,.97);padding:14px 24px;border-top:1px solid rgba(196,113,59,.2)">
+  <div style="max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <p style="font-size:12px;color:rgba(248,243,237,.6);flex:1;min-width:260px;line-height:1.5">Ta strona korzysta z plików cookies. <a href="javascript:void(0)" onclick="document.getElementById('polityka').style.display='block'" style="color:var(--tc)">Polityka Prywatności</a>.</p>
+    <div style="display:flex;gap:6px">
+      <button onclick="acceptCookies()" style="background:var(--tc);color:#fff;border:none;padding:8px 18px;font-size:11px;font-weight:700;cursor:pointer">AKCEPTUJĘ</button>
+      <button onclick="rejectCookies()" style="background:transparent;color:rgba(248,243,237,.3);border:1px solid rgba(248,243,237,.1);padding:8px 14px;font-size:11px;cursor:pointer">ODRZUĆ</button>
+    </div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Mobile menu
+  document.getElementById('hbtn').onclick=function(){document.getElementById('mobmenu').classList.add('open')};
+  document.getElementById('mobclose').onclick=function(){closeMob()};
+  function closeMob(){document.getElementById('mobmenu').classList.remove('open')}
+  document.querySelectorAll('.ml').forEach(function(a){a.addEventListener('click',closeMob)});
+
+  // Panels
+  function openPanel(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+  function closePanel(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.panel.open').forEach(function(p){p.classList.remove('open')});document.body.style.overflow=''}});
+
+  // Exp
