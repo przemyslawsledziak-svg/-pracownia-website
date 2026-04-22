@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regulamin — PRACOWNIA | Warszawa</title>
+  <meta name="description" content="Regulamin korzystania z przestrzeni PRACOWNIA — samoobsługowego studia i sali do wynajęcia w Warszawie. Zasady rezerwacji, płatności, kaucji, odpowiedzialności.">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --charcoal: #2C2C2C;
+      --terracotta: #C4713B;
+      --cream: #F5EDE3;
+      --dark: #1C1A17;
+      --sand: #D4C4A8;
+      --rule: #E6DED4;
+      --muted: #7A6F63;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--charcoal);
+      background: #FAF6F0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ========== HEADER ========== */
+    .topbar {
+      position: sticky; top: 0;
+      background: rgba(250, 246, 240, 0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+    }
+    .topbar-inner {
+      max-width: 860px; margin: 0 auto;
+      padding: 16px 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 24px;
+    }
+    .topbar a.brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px; letter-spacing: 3px;
+      color: var(--charcoal); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .topbar a.brand::before {
+      content: '←';
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      transition: transform 0.2s;
+    }
+    .topbar a.brand:hover::before { transform: translateX(-3px); }
+    .topbar .meta {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      padding: 80px 24px 48px;
+      text-align: center;
+      max-width: 860px; margin: 0 auto;
+    }
+    .hero .eyebrow {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--terracotta);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(56px, 10vw, 104px);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+    .hero h1 .accent {
+      color: var(--terracotta);
+      font-size: 0.6em;
+      display: block;
+      letter-spacing: 6px;
+    }
+    .hero .version {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    /* ========== OPERATOR CARD ========== */
+    .operator-card {
+      max-width: 720px;
+      margin: 32px auto 0;
+      padding: 28px 32px;
+      background: var(--cream);
+      border-left: 3px solid var(--terracotta);
+      text-align: left;
+    }
+    .operator-card .label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+    .operator-card .name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+    .operator-card .details {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+    .operator-card .details a {
+      color: var(--charcoal);
+      text-decoration: none;
+      border-bottom: 1px solid var(--sand);
+    }
+    .operator-card .details a:hover { border-color: var(--terracotta); }
+
+    /* ========== MAIN CONTENT WRAPPER ========== */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    /* ========== TOC ========== */
+    .toc {
+      background: #fff;
+      border: 1px solid var(--rule);
+      padding: 28px 32px;
+      margin-bottom: 64px;
+    }
+    .toc h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 3px;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      columns: 2;
+      column-gap: 40px;
+    }
+    @media (max-width: 640px) { .toc ol { columns: 1; } }
+    .toc li {
+      counter-increment: toc;
+      margin-bottom: 8px;
+      break-inside: avoid;
+    }
+    .toc li a {
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .toc li a::before {
+      content: '§' counter(toc);
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      color: var(--terracotta);
+      font-size: 13px;
+      min-width: 32px;
+    }
+    .toc li a:hover { color: var(--terracotta); }
+
+    /* ========== PREAMBLE ========== */
+    .preamble {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--muted);
+      padding: 0 32px;
+      margin-bottom: 64px;
+      border-left: 2px solid var(--sand);
+    }
+
+    /* ========== PARAGRAPH SECTIONS ========== */
+    .para {
+      margin-bottom: 56px;
+      scroll-margin-top: 80px;
+    }
+    .para h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: var(--charcoal);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .para h2 .num {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 22px;
+      color: var(--terracotta);
+      letter-spacing: 0;
+      margin-right: 12px;
+    }
+
+    .para ol {
+      list-style: none;
+      counter-reset: num-list;
+    }
+    .para > ol > li {
+      counter-increment: num-list;
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 14px;
+    }
+    .para > ol > li::before {
+      content: counter(num-list) '.';
+      position: absolute;
+      left: 0;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .para ol ol {
+      list-style: none;
+      counter-reset: alpha-list;
+      margin-top: 8px;
+      padding-left: 0;
+    }
+    .para ol ol li {
+      counter-increment: alpha-list;
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 6px;
+      margin-top: 0;
+    }
+    .para ol ol li::before {
+      content: counter(alpha-list, lower-alpha) ')';
+      position: absolute;
+      left: 0;
+      color: var(--terracotta);
+      font-weight: 500;
+    }
+
+    .para strong { font-weight: 600; color: var(--charcoal); }
+    .para em { font-style: italic; color: var(--muted); }
+
+    /* ========== ZALACZNIK / KARY TABLE ========== */
+    .zalacznik {
+      margin-top: 80px;
+      padding-top: 64px;
+      border-top: 2px solid var(--terracotta);
+    }
+    .zalacznik .label {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--terracotta);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .zalacznik h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 2px;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .zalacznik .intro {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .kary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .kary-table thead {
+      background: var(--cream);
+    }
+    .kary-table th {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--charcoal);
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--sand);
+    }
+    .kary-table th:last-child { text-align: right; }
+    .kary-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--rule);
+      vertical-align: top;
+    }
+    .kary-table td:last-child {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      color: var(--charcoal);
+      font-weight: 500;
+    }
+    .kary-table tr:last-child td { border-bottom: none; }
+    .kary-table tr:hover td { background: rgba(245, 237, 227, 0.3); }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--dark);
+      color: var(--cream);
+      padding: 64px 24px 48px;
+      text-align: center;
+    }
+    footer .footer-inner { max-width: 860px; margin: 0 auto; }
+    footer .brand-mark {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 6px;
+      margin-bottom: 16px;
+    }
+    footer .tagline {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--sand);
+      margin-bottom: 32px;
+    }
+    footer .info {
+      font-size: 13px;
+      color: var(--sand);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    footer .info a {
+      color: var(--cream);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245, 237, 227, 0.3);
+    }
+    footer .info a:hover { border-color: var(--terracotta); }
+    footer .version-line {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 12px;
+      color: var(--sand);
+      opacity: 0.7;
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(212, 196, 168, 0.2);
+    }
+
+    /* ========== PRINT ========== */
+    @media print {
+      .topbar, footer { display: none; }
+      body { background: white; color: black; font-size: 11pt; }
+      .hero { padding: 0; page-break-after: avoid; }
+      .hero h1 { font-size: 48pt; }
+      .operator-card {
+        background: none;
+        border: 1px solid #999;
+        padding: 16pt;
+      }
+      .toc { display: none; }
+      main { padding: 0; max-width: 100%; }
+      .preamble {
+        padding: 0 16pt;
+        margin-bottom: 24pt;
+        font-size: 11pt;
+      }
+      .para { margin-bottom: 24pt; page-break-inside: auto; }
+      .para h2 { font-size: 18pt; page-break-after: avoid; }
+      .kary-table { font-size: 10pt; }
+      .kary-table th { background: #F5EDE3 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { color: black; text-decoration: none; border: none; }
+    }
+
+    /* ========== MOBILE ========== */
+    @media (max-width: 640px) {
+      .hero { padding: 48px 20px 32px; }
+      .hero h1 { font-size: 56px; }
+      .operator-card { padding: 20px 24px; }
+      main { padding: 40px 20px 64px; }
+      .toc { padding: 20px 24px; }
+      .preamble { padding: 0 20px; font-size: 15px; }
+      .para h2 { font-size: 22px; }
+      .kary-table th, .kary-table td { padding: 12px 14px; font-size: 13px; }
+      .topbar-inner { padding: 12px 20px; }
+      .topbar .meta { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand">PRACOWNIA</a>
+      <span class="meta">Regulamin v2.0</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">dokument prawny</div>
+    <h1>Regulamin<span class="accent">PRACOWNIA</span></h1>
+    <div class="version">wersja 2.0  ·  obowiązuje od 22 kwietnia 2026</div>
+
+    <div class="operator-card">
+      <div class="label">Operator</div>
+      <div class="name">Kulinarisk Solutions Sp. z o.o.</div>
+      <div class="details">
+        ul. Mehoffera 26/lok. 19, 03-131 Warszawa<br>
+        NIP: 1133136673  ·  KRS: 0001110124  ·  REGON: 528859742<br>
+        <a href="mailto:kontakt@pracownia.studio">kontakt@pracownia.studio</a>  ·
+        <a href="tel:+48512760769">+48 512 760 769</a>  ·
+        <a href="https://www.pracownia.studio">www.pracownia.studio</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+
+    <nav class="toc" aria-label="Spis treści">
+      <h2>Spis treści</h2>
+      <ol>
+        <li><a href="#p1">Definicje</a></li>
+        <li><a href="#p2">Postanowienia ogólne</a></li>
+        <li><a href="#p3">Rezerwacja i zawarcie umowy</a></li>
+        <li><a href="#p4">Płatność za wynajem</a></li>
+        <li><a href="#p5">Anulowanie i zmiana rezerwacji</a></li>
+        <li><a href="#p6">Zasady korzystania z przestrzeni</a></li>
+        <li><a href="#p7">Wyposażenie i mienie</a></li>
+        <li><a href="#p8">Rezerwacje eventowe — zasady szczególne</a></li>
+        <li><a href="#p9">Kaucja zwrotna</a></li>
+        <li><a href="#p10">Wynajmy z udziałem osób małoletnich</a></li>
+        <li><a href="#p11">Alkohol, tytoń i substancje odurzające</a></li>
+        <li><a href="#p12">Odpowiedzialność Najemcy i kary umowne</a></li>
+        <li><a href="#p13">Hałas, cisza nocna, sąsiedzi</a></li>
+        <li><a href="#p14">Prawa autorskie i treści multimedialne</a></li>
+        <li><a href="#p15">Bezpieczeństwo i procedury awaryjne</a></li>
+        <li><a href="#p16">Monitoring i ochrona danych (RODO)</a></li>
+        <li><a href="#p17">Reklamacje</a></li>
+        <li><a href="#p18">Postanowienia końcowe</a></li>
+      </ol>
+    </nav>
+
+    <p class="preamble">
+      Niniejszy Regulamin określa zasady korzystania z przestrzeni PRACOWNIA — samoobsługowego studia i sali do wynajęcia zlokalizowanej w Warszawie przy ul. Mehoffera 26/lok. 19. Dokonanie rezerwacji jest równoznaczne z zapoznaniem się z Regulaminem i akceptacją jego treści. Regulamin stanowi integralną część umowy najmu zawieranej pomiędzy Operatorem a Najemcą.
+    </p>
+
+    <!-- §1 -->
+    <section class="para" id="p1">
+      <h2><span class="num">§1.</span>Definicje</h2>
+      <ol>
+        <li>Użyte w Regulaminie określenia oznaczają:
+          <ol>
+            <li>„Operator" — Kulinarisk Solutions Sp. z o.o. z siedzibą w Warszawie, ul. Mehoffera 26/lok. 19, 03-131 Warszawa, NIP: 1133136673, KRS: 0001110124.</li>
+            <li>„Pracownia" — przestrzeń o powierzchni około 30 m² zlokalizowana pod adresem ul. Mehoffera 26/lok. 19 w Warszawie, udostępniana Najemcom na zasadach określonych w Regulaminie.</li>
+            <li>„Najemca" — osoba fizyczna posiadająca pełną zdolność do czynności prawnych, osoba prawna lub jednostka organizacyjna nieposiadająca osobowości prawnej, która dokonała rezerwacji Pracowni.</li>
+            <li>„Uczestnicy" — osoby przebywające w Pracowni w czasie trwania najmu na zaproszenie Najemcy.</li>
+            <li>„Osoba małoletnia" — osoba, która nie ukończyła 18. roku życia.</li>
+            <li>„Rezerwacja standardowa" — wynajem do celów spotkań biznesowych, szkoleń, warsztatów, sesji zdjęciowych i nagraniowych, pracy indywidualnej oraz innych zastosowań niebędących Rezerwacją eventową.</li>
+            <li>„Rezerwacja eventowa" — wynajem o charakterze imprezowym, okolicznościowym lub rozrywkowym, w tym: urodziny, imieniny, wieczory kawalerskie i panieńskie, przyjęcia komunijne i rodzinne, integracje grupowe powyżej 15 osób, wydarzenia z udziałem napojów alkoholowych, a także wszelkie wynajmy z udziałem osób małoletnich.</li>
+            <li>„Cennik" — aktualny wykaz stawek za wynajem Pracowni, dostępny na stronie www.pracownia.studio.</li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+
+    <!-- §2 -->
+    <section class="para" id="p2">
+      <h2><span class="num">§2.</span>Postanowienia ogólne</h2>
+      <ol>
+        <li>Pracownia jest przestrzenią udostępnianą w formule samoobsługowej (self-service). Operator nie zapewnia stałej obsługi na miejscu w czasie trwania najmu, z zastrzeżeniem Rezerwacji eventowych, przy rozpoczęciu których wymagana jest obecność przedstawiciela Operatora.</li>
+        <li>Pracownia może być wynajmowana codziennie w godzinach 08:00–24:00. Najem kończy się najpóźniej o godzinie 24:00 — opuszczenie lokalu powinno nastąpić przed tą godziną.</li>
+        <li>Maksymalna liczba osób przebywających jednocześnie w Pracowni wynosi:
+          <ol>
+            <li>15 osób — dla Rezerwacji standardowych,</li>
+            <li>20 osób — dla Rezerwacji eventowych, o ile Operator nie zastrzeże inaczej w umowie najmu.</li>
+          </ol>
+        </li>
+        <li>Przekroczenie maksymalnej liczby osób stanowi naruszenie Regulaminu i skutkuje naliczeniem kary umownej zgodnie z §12.</li>
+        <li>Dokonanie rezerwacji oraz jej opłacenie jest równoznaczne z zapoznaniem się z Regulaminem, akceptacją jego treści oraz zawarciem umowy najmu na warunkach w nim określonych.</li>
+        <li>Regulamin jest dostępny nieprzerwanie na stronie www.pracownia.studio w sposób umożliwiający jego pobranie, odtworzenie i utrwalenie.</li>
+      </ol>
+    </section>
+
+    <!-- §3 -->
+    <section class="para" id="p3">
+      <h2><span class="num">§3.</span>Rezerwacja i zawarcie umowy</h2>
+      <ol>
+        <li>Rezerwacji Pracowni można dokonać:
+          <ol>
+            <li>za pośrednictwem systemu rezerwacji online zintegrowanego ze stroną www.pracownia.studio,</li>
+            <li>poprzez kontakt mailowy pod adresem kontakt@pracownia.studio,</li>
+            <li>telefonicznie pod numerem +48 512 760 769.</li>
+          </ol>
+        </li>
+        <li>Przy rezerwacji Najemca zobowiązany jest podać: imię, nazwisko, numer telefonu, adres e-mail oraz charakter najmu (standardowy lub eventowy). Dla Najemców będących przedsiębiorcami — dodatkowo nazwę firmy i NIP.</li>
+        <li>Warunkiem potwierdzenia rezerwacji standardowej jest opłacenie całości należności za wynajem przed jej rozpoczęciem, w sposób określony w §4.</li>
+        <li>W przypadku Rezerwacji eventowej, oprócz opłaty za wynajem, Najemca zobowiązany jest do uiszczenia kaucji zwrotnej oraz podpisania odrębnej umowy najmu eventowego w formie pisemnej, której wzór udostępnia Operator. Szczegółowe zasady dotyczące Rezerwacji eventowych określa §8, a kaucji — §9.</li>
+        <li>Operator zastrzega sobie prawo do odmowy realizacji rezerwacji w szczególności w przypadku:
+          <ol>
+            <li>niekompletnych lub nieprawdziwych danych Najemcy,</li>
+            <li>uzasadnionego podejrzenia, że najem zostanie wykorzystany niezgodnie z Regulaminem lub przepisami prawa,</li>
+            <li>wcześniejszych naruszeń Regulaminu przez Najemcę,</li>
+            <li>braku dostępności terminu.</li>
+          </ol>
+        </li>
+        <li>Umowa najmu zostaje zawarta z chwilą łącznego spełnienia warunków: potwierdzenia rezerwacji przez Operatora, zaksięgowania płatności oraz — w przypadku Rezerwacji eventowych — podpisania odrębnej pisemnej umowy najmu eventowego i wpłacenia kaucji.</li>
+      </ol>
+    </section>
+
+    <!-- §4 -->
+    <section class="para" id="p4">
+      <h2><span class="num">§4.</span>Płatność za wynajem</h2>
+      <ol>
+        <li>Aktualne stawki za wynajem Pracowni określa Cennik dostępny na stronie www.pracownia.studio. Ceny podane są w złotych polskich, w dwóch wariantach: brutto dla klientów indywidualnych oraz netto dla przedsiębiorców (z doliczeniem 23% VAT).</li>
+        <li>Płatność za wynajem odbywa się w formie:
+          <ol>
+            <li>przelewu bankowego na rachunek Operatora wskazany w potwierdzeniu rezerwacji,</li>
+            <li>płatności BLIK na numer telefonu Operatora,</li>
+            <li>płatności online za pośrednictwem zintegrowanego systemu płatności (Stripe, PayU) — o ile taka opcja jest dostępna w momencie dokonywania rezerwacji.</li>
+          </ol>
+        </li>
+        <li>Płatność gotówką za sam wynajem nie jest akceptowana. Wyjątek stanowi kaucja pobierana w przypadku Rezerwacji eventowych, zgodnie z §9.</li>
+        <li>Faktura VAT wystawiana jest na żądanie Najemcy będącego przedsiębiorcą i przesyłana drogą elektroniczną na adres e-mail wskazany przy rezerwacji, w terminie do 7 dni od zaksięgowania płatności.</li>
+        <li>Za dzień płatności uznaje się dzień zaksięgowania środków na rachunku Operatora. Brak zaksięgowania płatności w terminie 48 godzin przed rozpoczęciem najmu skutkuje automatycznym anulowaniem rezerwacji, o ile strony nie ustalą inaczej.</li>
+      </ol>
+    </section>
+
+    <!-- §5 -->
+    <section class="para" id="p5">
+      <h2><span class="num">§5.</span>Anulowanie i zmiana rezerwacji</h2>
+      <ol>
+        <li>Dla Rezerwacji standardowych obowiązują następujące zasady anulowania:
+          <ol>
+            <li>anulowanie na co najmniej 48 godzin przed rozpoczęciem najmu — zwrot 100% wpłaconej kwoty,</li>
+            <li>anulowanie w terminie 24–48 godzin przed rozpoczęciem najmu — zwrot 50% wpłaconej kwoty,</li>
+            <li>anulowanie w terminie krótszym niż 24 godziny oraz niestawiennictwo (no-show) — brak zwrotu.</li>
+          </ol>
+        </li>
+        <li>Dla Rezerwacji eventowych obowiązują zasady rozszerzone, z uwagi na wyższe koszty przygotowania i zablokowaną dostępność terminu:
+          <ol>
+            <li>anulowanie na co najmniej 7 dni przed rozpoczęciem najmu — zwrot 100% wpłaconej kwoty za wynajem oraz kaucji (jeżeli została wpłacona),</li>
+            <li>anulowanie w terminie 3–7 dni przed rozpoczęciem najmu — zwrot 50% wpłaconej kwoty za wynajem oraz pełnej kaucji,</li>
+            <li>anulowanie w terminie krótszym niż 3 dni oraz niestawiennictwo — brak zwrotu kwoty za wynajem; kaucja podlega zwrotowi w pełnej wysokości.</li>
+          </ol>
+        </li>
+        <li>Zmiana terminu rezerwacji na inny dostępny termin możliwa jest bezpłatnie w terminie nie krótszym niż 48 godzin przed rozpoczęciem pierwotnego najmu (7 dni — dla Rezerwacji eventowych), w zależności od dostępności kalendarza.</li>
+        <li>Zwrot środków następuje na rachunek bankowy, z którego dokonano płatności, w terminie do 7 dni roboczych od dnia anulowania rezerwacji.</li>
+        <li>W przypadku odwołania najmu z przyczyn leżących po stronie Operatora (np. awaria techniczna, zdarzenie losowe uniemożliwiające realizację najmu), Operator zwraca Najemcy 100% wpłaconej kwoty oraz zaproponuje inny termin lub rekompensatę.</li>
+      </ol>
+    </section>
+
+    <!-- §6 -->
+    <section class="para" id="p6">
+      <h2><span class="num">§6.</span>Zasady korzystania z przestrzeni</h2>
+      <ol>
+        <li>Pracownia może być wykorzystywana wyłącznie do celów zgodnych z jej przeznaczeniem, określonych w Cenniku i niezakłócających porządku publicznego.</li>
+        <li>Najemca zobowiązuje się do:
+          <ol>
+            <li>korzystania z Pracowni w sposób zgodny z Regulaminem, przepisami prawa, zasadami współżycia społecznego oraz obowiązującym porządkiem domowym budynku,</li>
+            <li>pozostawienia Pracowni w stanie niepogorszonym, porównywalnym ze stanem zastanym przy rozpoczęciu najmu,</li>
+            <li>niezwłocznego zgłoszenia Operatorowi wszelkich usterek, awarii lub zdarzeń wymagających interwencji,</li>
+            <li>opuszczenia Pracowni w terminie wskazanym w rezerwacji,</li>
+            <li>nieudostępniania kodu dostępu do lokalu osobom trzecim spoza grupy Uczestników.</li>
+          </ol>
+        </li>
+        <li>W Pracowni obowiązuje:
+          <ol>
+            <li>całkowity zakaz palenia wyrobów tytoniowych, e-papierosów oraz używania jakichkolwiek form otwartego ognia, z zastrzeżeniem ust. 5,</li>
+            <li>zakaz wprowadzania zwierząt, z wyjątkiem psów asystujących osób z niepełnosprawnościami,</li>
+            <li>zakaz organizowania wydarzeń publicznych, komercyjnych imprez biletowanych oraz działań promocyjnych bez uprzedniej pisemnej zgody Operatora,</li>
+            <li>zakaz używania świec, kadzidełek, zimnych ogni oraz innych źródeł otwartego ognia,</li>
+            <li>zakaz mocowania jakichkolwiek elementów do ścian, sufitu i mebli w sposób powodujący ich uszkodzenie (taśma klejąca, gwoździe, kleje).</li>
+          </ol>
+        </li>
+        <li>Dekoracje eventowe (balony, girlandy, banery) dopuszczalne są wyłącznie przy użyciu metod bezinwazyjnych (żyłki, taśmy nieniszczące). Odpowiedzialność za ewentualne uszkodzenia powstałe w wyniku instalacji dekoracji ponosi Najemca.</li>
+        <li>Palenie wyrobów tytoniowych oraz używanie e-papierosów dozwolone jest wyłącznie poza budynkiem, w miejscach do tego przeznaczonych. Palenie na balkonie, klatce schodowej lub w innych częściach wspólnych budynku jest zabronione.</li>
+      </ol>
+    </section>
+
+    <!-- §7 -->
+    <section class="para" id="p7">
+      <h2><span class="num">§7.</span>Wyposażenie i mienie</h2>
+      <ol>
+        <li>W cenie najmu Najemca otrzymuje dostęp do pełnego wyposażenia Pracowni, w tym: projektora, systemu audio, smart lighting, klimatyzacji, sieci Wi-Fi, ekspresu do kawy, dystrybutora wody, a także do zapasu kawy, herbaty i wody filtrowanej bez limitu.</li>
+        <li>Wyposażenie dodatkowe (w szczególności profesjonalne mikrofony, kamery, sprzęt nagraniowy Studio Pro) udostępniane jest na podstawie odrębnej wyceny i umowy, po uprzednim zgłoszeniu takiego zapotrzebowania.</li>
+        <li>Najemca zobowiązuje się do korzystania z wyposażenia zgodnie z jego przeznaczeniem i instrukcjami obsługi dostępnymi w Pracowni lub przesłanymi przez Operatora.</li>
+        <li>Zabrania się:
+          <ol>
+            <li>samodzielnej ingerencji w instalacje techniczne (elektryczna, HVAC, oświetlenie, alarm, sieciowa),</li>
+            <li>wynoszenia wyposażenia poza lokal Pracowni,</li>
+            <li>demontażu, przerabiania lub modyfikowania wyposażenia,</li>
+            <li>przesuwania ciężkich elementów wyposażenia (stół konferencyjny, kanapa, regały) bez uprzedniej zgody Operatora.</li>
+          </ol>
+        </li>
+        <li>W razie stwierdzenia uszkodzenia wyposażenia, Najemca ponosi pełną odpowiedzialność finansową do wysokości kosztu naprawy lub wymiany uszkodzonego elementu, z zastrzeżeniem postanowień §9 i §12.</li>
+      </ol>
+    </section>
+
+    <!-- §8 -->
+    <section class="para" id="p8">
+      <h2><span class="num">§8.</span>Rezerwacje eventowe — zasady szczególne</h2>
+      <ol>
+        <li>Rezerwacje eventowe, o których mowa w §1 ust. 1 lit. g, objęte są rozszerzonymi zasadami, ze względu na podwyższone ryzyko operacyjne.</li>
+        <li>Dla Rezerwacji eventowych obowiązkowe jest:
+          <ol>
+            <li>zawarcie odrębnej pisemnej umowy najmu eventowego, której wzór udostępnia Operator,</li>
+            <li>wpłacenie kaucji zwrotnej w wysokości 1 000 zł, zgodnie z §9,</li>
+            <li>sporządzenie protokołu zdawczo-odbiorczego przy rozpoczęciu i zakończeniu najmu,</li>
+            <li>obecność przedstawiciela Operatora przy rozpoczęciu najmu w celu wydania lokalu, pobrania kaucji i podpisania dokumentów,</li>
+            <li>wskazanie w umowie najmu eventowego osoby pełnoletniej odpowiedzialnej za grupę Uczestników, będącej Najemcą lub osobą przez niego wyznaczoną.</li>
+          </ol>
+        </li>
+        <li>Operator zastrzega sobie prawo do odmowy zawarcia umowy najmu eventowego, w szczególności w przypadku braku zgody Najemcy na którykolwiek z warunków określonych w ust. 2 lub uzasadnionego podejrzenia o nadużycia.</li>
+        <li>Rezerwacja eventowa nie może być łączona z prowadzeniem działalności o charakterze publicznym, biletowanym lub wymagającym odrębnych zezwoleń (np. gastronomia komercyjna, sprzedaż alkoholu), bez uprzedniej pisemnej zgody Operatora i spełnienia wszystkich wymogów prawnych.</li>
+      </ol>
+    </section>
+
+    <!-- §9 -->
+    <section class="para" id="p9">
+      <h2><span class="num">§9.</span>Kaucja zwrotna</h2>
+      <ol>
+        <li>Dla każdej Rezerwacji eventowej Operator pobiera kaucję zwrotną w wysokości 1 000 zł (słownie: jeden tysiąc złotych).</li>
+        <li>Kaucja wpłacana jest <strong>wyłącznie w formie gotówkowej</strong>, bezpośrednio przedstawicielowi Operatora, w momencie rozpoczęcia najmu — przed wydaniem kluczy i podpisaniem protokołu zdawczo-odbiorczego. Fakt pobrania kaucji jest potwierdzany w umowie najmu eventowego oraz pokwitowaniem wystawionym Najemcy.</li>
+        <li>Kaucja zwracana jest w terminie do <strong>24 godzin</strong> od zakończenia najmu, w jednej z dwóch form, do wyboru Operatora:
+          <ol>
+            <li>gotówką — bezpośrednio przy zakończeniu najmu, po wspólnym podpisaniu protokołu zdawczo-odbiorczego, jeśli przedstawiciel Operatora jest obecny,</li>
+            <li>przelewem BLIK na numer telefonu Najemcy lub przelewem bankowym na wskazany w umowie najmu eventowego rachunek — w terminie 24 godzin od zakończenia najmu.</li>
+          </ol>
+        </li>
+        <li>Kaucja jest zwracana w pełnej wysokości, pod warunkiem łącznego spełnienia następujących warunków:
+          <ol>
+            <li>pozostawienia lokalu i wyposażenia w stanie niepogorszonym,</li>
+            <li>przestrzegania wszystkich postanowień Regulaminu oraz umowy najmu eventowego,</li>
+            <li>opuszczenia lokalu w terminie wskazanym w rezerwacji,</li>
+            <li>niewystąpienia przesłanek do naliczenia kar umownych określonych w §12 oraz w Załączniku nr 1.</li>
+          </ol>
+        </li>
+        <li>W przypadku stwierdzenia naruszeń, szkód lub konieczności naliczenia kar umownych, Operator potrąca odpowiednią kwotę z kaucji, informując o tym Najemcę drogą e-mailową wraz z dokumentacją (zdjęcia, opis naruszenia, kalkulacja). Pozostała część kaucji jest zwracana w terminie określonym w ust. 3.</li>
+        <li>Jeżeli wartość stwierdzonych szkód lub naliczonych kar umownych przekracza wysokość kaucji, Najemca zobowiązany jest do pokrycia różnicy w terminie 14 dni od otrzymania wezwania do zapłaty, pod rygorem skierowania sprawy na drogę sądową.</li>
+        <li>Operator zastrzega sobie prawo do podwyższenia kaucji ponad standardową kwotę 1 000 zł w przypadkach szczególnych (grupy powyżej 15 osób, wydarzenia o podwyższonym ryzyku, wynajmy łączone z usługami dodatkowymi — catering, DJ, dekoracje). Wysokość podwyższonej kaucji jest ustalana indywidualnie i komunikowana Najemcy przed zawarciem umowy.</li>
+        <li>Dla Rezerwacji standardowych kaucja nie jest pobierana, chyba że Operator zastrzeże inaczej w indywidualnym przypadku.</li>
+      </ol>
+    </section>
+
+    <!-- §10 -->
+    <section class="para" id="p10">
+      <h2><span class="num">§10.</span>Wynajmy z udziałem osób małoletnich</h2>
+      <ol>
+        <li>Stroną umowy najmu może być <strong>wyłącznie osoba pełnoletnia</strong>, posiadająca pełną zdolność do czynności prawnych. Osoba małoletnia nie może samodzielnie zawrzeć umowy najmu z Operatorem.</li>
+        <li>W przypadku najmu, w którym jako Uczestnicy biorą udział osoby małoletnie, Najemca zobowiązuje się do:
+          <ol>
+            <li>zawarcia umowy najmu eventowego we własnym imieniu jako osoba pełnoletnia,</li>
+            <li>zapewnienia obecności w lokalu co najmniej jednej osoby pełnoletniej przez cały czas trwania najmu; osobą tą może być Najemca lub inna wyznaczona przez niego osoba pełnoletnia (rodzic, opiekun prawny, członek rodziny, zaufana osoba dorosła),</li>
+            <li>wskazania w umowie najmu eventowego imienia, nazwiska oraz numeru telefonu osoby pełnoletniej odpowiedzialnej za grupę,</li>
+            <li>przyjęcia pełnej odpowiedzialności za bezpieczeństwo i zachowanie wszystkich Uczestników, w tym osób małoletnich,</li>
+            <li>przyjęcia pełnej odpowiedzialności materialnej za szkody wyrządzone w lokalu i wyposażeniu przez Uczestników, niezależnie od ich wieku.</li>
+          </ol>
+        </li>
+        <li>Najemca oświadcza, że posiada zgodę rodziców lub opiekunów prawnych wszystkich osób małoletnich uczestniczących w najmie, na ich obecność w Pracowni w czasie trwania najmu. Operator zastrzega sobie prawo do żądania okazania pisemnych zgód w uzasadnionych przypadkach, w szczególności przy grupach liczniejszych niż 10 osób małoletnich.</li>
+        <li>Najemca zobowiązany jest do zapewnienia bezpieczeństwa osobom małoletnim przez cały czas trwania najmu, w szczególności poprzez:
+          <ol>
+            <li>niepozostawianie osób małoletnich w lokalu bez nadzoru osoby pełnoletniej,</li>
+            <li>zapoznanie Uczestników z zasadami bezpieczeństwa (lokalizacja wyjść ewakuacyjnych, zakazy obowiązujące w lokalu),</li>
+            <li>niezwłoczne powiadomienie odpowiednich służb (112) oraz Operatora (+48 512 760 769) w przypadku zdarzenia zagrażającego zdrowiu lub życiu Uczestników.</li>
+          </ol>
+        </li>
+        <li>Naruszenie zobowiązań określonych w niniejszym paragrafie stanowi rażące naruszenie Regulaminu i skutkuje:
+          <ol>
+            <li>naliczeniem kar umownych zgodnie z Załącznikiem nr 1, w tym w szczególności kary za spożywanie alkoholu przez osoby małoletnie,</li>
+            <li>potrąceniem kary z kaucji zwrotnej,</li>
+            <li>uprawnieniem Operatora do rozwiązania umowy najmu ze skutkiem natychmiastowym i żądania opuszczenia lokalu przez Najemcę oraz Uczestników, bez zwrotu uiszczonej opłaty.</li>
+          </ol>
+        </li>
+      </ol>
+    </section>
+
+    <!-- §11 -->
+    <section class="para" id="p11">
+      <h2><span class="num">§11.</span>Alkohol, tytoń i substancje odurzające</h2>
+      <ol>
+        <li>Spożywanie napojów alkoholowych w Pracowni dopuszczalne jest wyłącznie przez osoby pełnoletnie, z zachowaniem umiaru i w sposób niezakłócający porządku publicznego. Alkohol dostarczany jest we własnym zakresie przez Najemcę — Operator nie prowadzi sprzedaży alkoholu.</li>
+        <li>W Pracowni obowiązuje <strong>bezwzględny zakaz spożywania alkoholu przez osoby małoletnie</strong>. Obowiązek egzekwowania tego zakazu spoczywa na Najemcy jako organizatorze najmu. Naruszenie tego zakazu skutkuje odpowiedzialnością określoną w §10 i §12, a także — w stosownych przypadkach — odpowiedzialnością karną i cywilną osoby, która udostępniła alkohol osobie małoletniej, zgodnie z art. 43¹ ustawy z dnia 26 października 1982 r. o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi.</li>
+        <li>W Pracowni obowiązuje <strong>bezwzględny zakaz</strong>:
+          <ol>
+            <li>wnoszenia, posiadania, udostępniania i używania środków odurzających, substancji psychotropowych oraz ich prekursorów, w rozumieniu ustawy o przeciwdziałaniu narkomanii,</li>
+            <li>przebywania w lokalu w stanie pod wpływem środków odurzających lub substancji psychotropowych,</li>
+            <li>spożywania alkoholu prowadzącego do stanu zakłócającego porządek lub zagrażającego bezpieczeństwu Uczestników.</li>
+          </ol>
+        </li>
+        <li>Naruszenie postanowień ust. 3 skutkuje:
+          <ol>
+            <li>natychmiastowym rozwiązaniem umowy najmu bez zwrotu uiszczonej opłaty,</li>
+            <li>naliczeniem kary umownej w wysokości 1 000 zł, zgodnie z Załącznikiem nr 1,</li>
+            <li>potrąceniem kary z kaucji zwrotnej i dochodzeniem różnicy na drodze sądowej,</li>
+            <li>w uzasadnionych przypadkach — powiadomieniem odpowiednich organów ścigania.</li>
+          </ol>
+        </li>
+        <li>Operator nie ponosi odpowiedzialności za skutki spożywania alkoholu przez Uczestników najmu ani za szkody powstałe w wyniku ich nieodpowiedzialnego zachowania. Pełną odpowiedzialność z tego tytułu ponosi Najemca.</li>
+        <li>Postanowienia dotyczące zakazu palenia tytoniu i e-papierosów w lokalu oraz w częściach wspólnych budynku określa §6 ust. 3 lit. a i ust. 5.</li>
+      </ol>
+    </section>
+
+    <!-- §12 -->
+    <section class="para" id="p12">
+      <h2><span class="num">§12.</span>Odpowiedzialność Najemcy i kary umowne</h2>
+      <ol>
+        <li>Najemca ponosi pełną odpowiedzialność materialną za:
+          <ol>
+            <li>szkody wyrządzone w lokalu i jego wyposażeniu przez siebie oraz Uczestników najmu,</li>
+            <li>naruszenia postanowień Regulaminu,</li>
+            <li>skutki działań Uczestników zagrażające porządkowi publicznemu, bezpieczeństwu osób lub mienia.</li>
+          </ol>
+        </li>
+        <li>Z tytułu naruszeń Regulaminu Operator uprawniony jest do naliczenia kar umownych w wysokościach określonych w Załączniku nr 1 do Regulaminu.</li>
+        <li>Naliczenie kary umownej nie wyłącza prawa Operatora do dochodzenia odszkodowania na zasadach ogólnych, jeżeli rzeczywista szkoda przewyższa wysokość zastrzeżonej kary (art. 484 § 1 Kodeksu cywilnego).</li>
+        <li>Kary umowne potrącane są w pierwszej kolejności z kaucji zwrotnej, jeżeli taka została pobrana. W przypadku braku kaucji lub jej niewystarczającej wysokości, Najemca zobowiązany jest do uregulowania należności w terminie 14 dni od otrzymania wezwania do zapłaty.</li>
+        <li>Operator zobowiązany jest do udokumentowania podstawy naliczenia kary umownej, w szczególności poprzez zdjęcia, protokół zdawczo-odbiorczy, zapisy monitoringu zewnętrznego lub inne dowody.</li>
+        <li>W przypadku powstania szkody, której wysokość przekracza wartości określone w Załączniku nr 1 (np. poważne uszkodzenie sprzętu, zalanie lokalu, dewastacja), Najemca odpowiada do wysokości rzeczywistego kosztu naprawy lub wymiany, na zasadach ogólnych.</li>
+      </ol>
+    </section>
+
+    <!-- §13 -->
+    <section class="para" id="p13">
+      <h2><span class="num">§13.</span>Hałas, cisza nocna, sąsiedzi</h2>
+      <ol>
+        <li>Pracownia zlokalizowana jest w budynku mieszkalnym. Najemca zobowiązuje się do poszanowania komfortu sąsiadów i nieemitowania hałasu w stopniu zakłócającym porządek domowy.</li>
+        <li>W godzinach <strong>22:00–06:00 obowiązuje cisza nocna</strong>. Oznacza to obowiązek:
+          <ol>
+            <li>ściszenia muzyki i dźwięku z rzutnika do poziomu niesłyszalnego poza lokalem,</li>
+            <li>ograniczenia głośnych rozmów, śmiechu i innych dźwięków mogących przenikać do sąsiednich mieszkań,</li>
+            <li>niewykonywania czynności powodujących drgania lub wibracje (np. taniec grupowy, skakanie).</li>
+          </ol>
+        </li>
+        <li>Potwierdzona skarga sąsiadów lub interwencja policji w związku z naruszeniem ciszy nocnej skutkuje:
+          <ol>
+            <li>naliczeniem kary umownej w wysokości 500 zł, zgodnie z Załącznikiem nr 1,</li>
+            <li>uprawnieniem Operatora do żądania natychmiastowego zakończenia najmu,</li>
+            <li>w przypadku powtarzających się naruszeń — odmową realizacji przyszłych rezerwacji Najemcy.</li>
+          </ol>
+        </li>
+        <li>W przypadku interwencji policji lub innych służb porządkowych w trakcie trwania najmu, Najemca zobowiązany jest do niezwłocznego poinformowania Operatora oraz współpracy ze służbami.</li>
+      </ol>
+    </section>
+
+    <!-- §14 -->
+    <section class="para" id="p14">
+      <h2><span class="num">§14.</span>Prawa autorskie i treści multimedialne</h2>
+      <ol>
+        <li>Najemca ponosi pełną i wyłączną odpowiedzialność za legalność wszelkich treści odtwarzanych, wyświetlanych, prezentowanych lub wykorzystywanych w Pracowni w czasie trwania najmu, w szczególności: muzyki, filmów, seriali, prezentacji, materiałów szkoleniowych i wszelkich utworów objętych ochroną prawa autorskiego.</li>
+        <li>Najemca zobowiązuje się do korzystania wyłącznie z treści:
+          <ol>
+            <li>do których posiada prawa autorskie lub stosowną licencję,</li>
+            <li>udostępnionych legalnie za pośrednictwem autoryzowanych platform streamingowych (np. Spotify, Netflix, YouTube) — z zachowaniem regulaminów tych platform,</li>
+            <li>znajdujących się w domenie publicznej.</li>
+          </ol>
+        </li>
+        <li>Operator nie jest stroną umów licencyjnych z organizacjami zbiorowego zarządzania prawami autorskimi (w szczególności ZAIKS, STOART, SFP-ZAPA) w zakresie publicznego odtwarzania utworów przez Najemców. Najemca zwalnia Operatora z wszelkich roszczeń z tego tytułu.</li>
+        <li>W przypadku zgłoszenia roszczeń z tytułu naruszenia praw autorskich przez organizacje, o których mowa w ust. 3, lub przez uprawnionych twórców, Najemca zobowiązuje się do pokrycia wszelkich kosztów postępowania, kar, odszkodowań oraz kosztów obsługi prawnej, jakie w związku z tym poniesie Operator.</li>
+        <li>Nagrywanie dźwięku i obrazu w Pracowni (sesje foto-video, podcasty, Reels, warsztaty z udziałem Uczestników) odbywa się na wyłączną odpowiedzialność Najemcy. Najemca zobowiązany jest do uzyskania zgód wszystkich osób, których wizerunek lub głos jest rejestrowany, zgodnie z obowiązującymi przepisami o ochronie danych osobowych i dobrach osobistych.</li>
+      </ol>
+    </section>
+
+    <!-- §15 -->
+    <section class="para" id="p15">
+      <h2><span class="num">§15.</span>Bezpieczeństwo i procedury awaryjne</h2>
+      <ol>
+        <li>Pracownia wyposażona jest w:
+          <ol>
+            <li>czujki dymu i systemy wczesnego ostrzegania,</li>
+            <li>oznakowanie wyjść ewakuacyjnych zgodnie z przepisami PPOŻ,</li>
+            <li>gaśnicę proszkową w wyznaczonym miejscu,</li>
+            <li>apteczkę pierwszej pomocy.</li>
+          </ol>
+        </li>
+        <li>Najemca zobowiązany jest do zapoznania się z rozmieszczeniem wyposażenia przeciwpożarowego i wyjść ewakuacyjnych niezwłocznie po wejściu do lokalu oraz do poinformowania o ich lokalizacji Uczestników najmu.</li>
+        <li>W przypadku wystąpienia zdarzenia awaryjnego (pożar, awaria instalacji, zalanie, wypadek z udziałem Uczestnika, włamanie) Najemca zobowiązany jest do:
+          <ol>
+            <li>natychmiastowego powiadomienia służb ratunkowych pod numerem 112,</li>
+            <li>niezwłocznego powiadomienia Operatora pod numerem +48 512 760 769,</li>
+            <li>przeprowadzenia ewakuacji Uczestników, jeśli zachodzi taka potrzeba,</li>
+            <li>pozostawania w dyspozycji służb do chwili zakończenia interwencji.</li>
+          </ol>
+        </li>
+        <li>Najemca zobowiązany jest do niezakłócania funkcjonowania instalacji bezpieczeństwa, w szczególności nieblokowania wyjść ewakuacyjnych, niezasłaniania czujek dymu, niewyłączania alarmu.</li>
+      </ol>
+    </section>
+
+    <!-- §16 -->
+    <section class="para" id="p16">
+      <h2><span class="num">§16.</span>Monitoring i ochrona danych osobowych (RODO)</h2>
+      <ol>
+        <li>Lokal Pracowni objęty jest <strong>monitoringiem wizyjnym</strong>, który obejmuje:
+          <ol>
+            <li>wejście do budynku oraz bezpośrednie otoczenie lokalu,</li>
+            <li>salon Pracowni (strefa główna najmu) — obejmowany przez jedną kamerę zamontowaną w widocznym miejscu.</li>
+          </ol>
+        </li>
+        <li><strong>Monitoringiem nie są objęte</strong>: łazienka, toaleta, przedsionek prowadzący do nich oraz strefy poza polem widzenia kamery. Monitoring ma charakter <strong>wyłącznie wizyjny</strong> — nie rejestruje dźwięku.</li>
+        <li>Informacja o monitoringu w formie piktogramu oraz klauzuli informacyjnej zgodnej z art. 13 RODO umieszczona jest w widocznym miejscu przy wejściu do Pracowni. Każdy Najemca i Uczestnik wchodząc do lokalu powinien zapoznać się z klauzulą informacyjną.</li>
+        <li>Celem stosowania monitoringu jest:
+          <ol>
+            <li>ochrona mienia Operatora oraz zapewnienie bezpieczeństwa osób przebywających w lokalu,</li>
+            <li>dokumentacja stanu lokalu i wyposażenia na potrzeby protokołu zdawczo-odbiorczego oraz rozliczenia kaucji,</li>
+            <li>zapobieganie i wykrywanie naruszeń Regulaminu,</li>
+            <li>dochodzenie ewentualnych roszczeń oraz obrona przed roszczeniami.</li>
+          </ol>
+        </li>
+        <li>Podstawą prawną przetwarzania nagrań z monitoringu jest prawnie uzasadniony interes Administratora (art. 6 ust. 1 lit. f RODO), polegający na ochronie mienia, bezpieczeństwa osób oraz możliwości dochodzenia roszczeń.</li>
+        <li>Najemca zobowiązany jest do poinformowania wszystkich Uczestników najmu o objęciu lokalu monitoringiem wizyjnym przed ich wejściem do Pracowni.</li>
+        <li>Administratorem danych osobowych z monitoringu oraz danych podawanych przez Najemców w procesie rezerwacji jest Kulinarisk Solutions Sp. z o.o. z siedzibą w Warszawie (NIP: 1133136673). Kontakt w sprawach związanych z ochroną danych: kontakt@pracownia.studio.</li>
+        <li>Dane z monitoringu przechowywane są przez okres do 14 dni, po czym są automatycznie usuwane w drodze nadpisania, chyba że zachodzi konieczność ich dalszego przechowywania w związku z dochodzeniem roszczeń lub postępowaniem prawnym. Dostęp do nagrań mają wyłącznie upoważnieni przedstawiciele Operatora.</li>
+        <li>Dane osobowe Najemców (imię, nazwisko, telefon, e-mail, dane firmy) przetwarzane są w celu:
+          <ol>
+            <li>realizacji umowy najmu (art. 6 ust. 1 lit. b RODO),</li>
+            <li>wystawienia faktur i rozliczeń księgowo-podatkowych (art. 6 ust. 1 lit. c RODO),</li>
+            <li>dochodzenia roszczeń i obrony przed roszczeniami (art. 6 ust. 1 lit. f RODO),</li>
+            <li>komunikacji związanej z najmem i jego realizacją.</li>
+          </ol>
+        </li>
+        <li>Osobom, których dane są przetwarzane (Najemcom oraz Uczestnikom zarejestrowanym na nagraniach monitoringu), przysługują prawa wynikające z RODO: prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, wniesienia sprzeciwu wobec przetwarzania, przenoszenia danych oraz wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa).</li>
+        <li>Szczegółowe informacje o przetwarzaniu danych osobowych, w tym pełna klauzula informacyjna dotycząca monitoringu, zawiera Polityka Prywatności dostępna na stronie www.pracownia.studio.</li>
+      </ol>
+    </section>
+
+    <!-- §17 -->
+    <section class="para" id="p17">
+      <h2><span class="num">§17.</span>Reklamacje</h2>
+      <ol>
+        <li>Najemca uprawniony jest do złożenia reklamacji dotyczącej świadczonych usług w terminie 14 dni od dnia zakończenia najmu.</li>
+        <li>Reklamacje należy składać drogą e-mailową na adres kontakt@pracownia.studio, podając:
+          <ol>
+            <li>imię i nazwisko lub nazwę firmy,</li>
+            <li>datę i godziny najmu,</li>
+            <li>opis zgłaszanej nieprawidłowości,</li>
+            <li>oczekiwany sposób rozpatrzenia reklamacji.</li>
+          </ol>
+        </li>
+        <li>Operator rozpatruje reklamacje w terminie 14 dni roboczych od dnia ich otrzymania, informując Najemcę o sposobie rozstrzygnięcia drogą e-mailową.</li>
+        <li>W przypadku nieuwzględnienia reklamacji Najemca będący konsumentem ma prawo skorzystać z pozasądowych sposobów rozpatrywania sporów, w szczególności z platformy ODR (Online Dispute Resolution) dostępnej pod adresem: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>.</li>
+      </ol>
+    </section>
+
+    <!-- §18 -->
+    <section class="para" id="p18">
+      <h2><span class="num">§18.</span>Postanowienia końcowe</h2>
+      <ol>
+        <li>W sprawach nieuregulowanych w Regulaminie zastosowanie mają przepisy Kodeksu cywilnego, ustawy o prawach konsumenta oraz innych powszechnie obowiązujących przepisów prawa polskiego.</li>
+        <li>Operator zastrzega sobie prawo do zmiany Regulaminu. Zmiany nie dotyczą rezerwacji już opłaconych — do tych rezerwacji stosuje się Regulamin w wersji obowiązującej w dniu dokonania rezerwacji.</li>
+        <li>O zmianach Regulaminu Operator informuje poprzez opublikowanie nowej wersji na stronie www.pracownia.studio wraz ze wskazaniem daty wejścia w życie.</li>
+        <li>Spory wynikające z umowy najmu rozstrzygane będą przez sąd właściwy miejscowo dla siedziby Operatora, z zastrzeżeniem uprawnień przysługujących konsumentom wynikających z bezwzględnie obowiązujących przepisów prawa.</li>
+        <li>Jeżeli którekolwiek z postanowień Regulaminu zostanie uznane za nieważne lub bezskuteczne, pozostałe postanowienia zachowują swoją ważność.</li>
+        <li>Regulamin wchodzi w życie z dniem 22 kwietnia 2026 r. i zastępuje wszystkie wcześniejsze wersje regulaminu PRACOWNI.</li>
+      </ol>
+    </section>
+
+    <!-- ZAŁĄCZNIK -->
+    <section class="zalacznik" id="zalacznik">
+      <div class="label">Załącznik nr 1</div>
+      <h2>Tabela kar umownych</h2>
+      <p class="intro">Poniższe kwoty mają charakter ryczałtowy i obowiązują niezależnie od rzeczywistej wysokości szkody, z zastrzeżeniem §12 ust. 3.</p>
+
+      <table class="kary-table">
+        <thead>
+          <tr>
+            <th>Rodzaj naruszenia</th>
+            <th>Kara umowna</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Ponadnormatywne sprzątanie lokalu / pozostawienie nieczystości, zalanie, plamy trudne do usunięcia</td><td>do 500 zł</td></tr>
+          <tr><td>Palenie tytoniu, e-papierosów lub używanie otwartego ognia w lokalu</td><td>500 zł</td></tr>
+          <tr><td>Przekroczenie czasu najmu (za każdą rozpoczętą godzinę)</td><td>150 zł / h</td></tr>
+          <tr><td>Niezwrócenie klucza / niezamknięcie lokalu po wyjściu</td><td>200 zł</td></tr>
+          <tr><td>Naruszenie ciszy nocnej potwierdzone skargą sąsiadów lub interwencją policji</td><td>500 zł</td></tr>
+          <tr><td>Spożywanie alkoholu przez osoby małoletnie lub wnoszenie / spożywanie środków odurzających</td><td>1 000 zł</td></tr>
+          <tr><td>Uszkodzenie lub zniszczenie wyposażenia lokalu</td><td>do wysokości kosztu naprawy lub wymiany</td></tr>
+          <tr><td>Przekroczenie maksymalnej liczby osób określonej w Regulaminie</td><td>300 zł</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="brand-mark">PRACOWNIA</div>
+      <div class="tagline">przestrzeń na wynajem</div>
+      <div class="info">
+        Kulinarisk Solutions Sp. z o.o.<br>
+        ul. Mehoffera 26/lok. 19, 03-131 Warszawa<br>
+        NIP: 1133136673  ·  KRS: 0001110124<br>
+        <a href="mailto:kontakt@pracownia.studio">kontakt@pracownia.studio</a>  ·
+        <a href="tel:+48512760769">+48 512 760 769</a>
+      </div>
+      <div class="version-line">
+        Regulamin v2.0  ·  obowiązuje od 22 kwietnia 2026  ·  <a href="index.html" style="color: inherit;">← powrót do strony</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
